@@ -6,8 +6,8 @@ import { useEffect, useMemo, useState } from "react";
 
 export const amazonUrl = "https://www.amazon.com/";
 export const logoBlack = "/logos/logo black.svg";
-export const goBottle = "/go/hero.png";
-export const proBottle = "/pro/hero.png";
+export const goBottle = "/go/go-transparent.png";
+export const proBottle = "/pro/pro-transparent.png";
 
 const navItems = [
   { label: "Products", href: "/#products" },
@@ -333,17 +333,17 @@ function HeroProduct() {
 
   return (
     <motion.div
-      className="relative mx-auto aspect-[4/5] w-full max-w-[710px] lg:max-w-[820px] lg:translate-x-5 lg:translate-y-6"
+      className="relative mx-auto h-[52vh] min-h-[360px] w-full max-w-[430px] sm:h-[58vh] sm:max-h-[560px] sm:max-w-[520px] lg:h-[72vh] lg:min-h-[500px] lg:max-h-[660px] lg:max-w-[610px] lg:translate-x-6"
       animate={reduceMotion ? undefined : { y: [0, -8, 0] }}
       transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
     >
-      <div className="absolute inset-x-0 bottom-6 top-6 rounded-[56px] bg-accent/16 blur-3xl" />
-      <div className="absolute bottom-7 left-1/2 h-20 w-2/3 -translate-x-1/2 rounded-full bg-ink/12 blur-2xl" />
+      <div className="absolute inset-x-4 bottom-10 top-8 rounded-[56px] bg-accent/14 blur-3xl" />
+      <div className="absolute bottom-6 left-1/2 h-16 w-2/3 -translate-x-1/2 rounded-full bg-ink/12 blur-2xl" />
       <SmartImage
         src={proBottle}
         alt="Laikfvea PRO hydrogen water bottle"
         priority
-        className="scale-[1.16]"
+        className="scale-[0.98] sm:scale-100 lg:scale-[1.02]"
         sizes="(min-width: 1024px) 62vw, 100vw"
       />
     </motion.div>
