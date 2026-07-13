@@ -17,6 +17,7 @@ html {
 
 body {
   min-height: 100vh;
+  font-family: var(--font-montserrat, Montserrat), Arial, sans-serif;
 }
 
 button,
