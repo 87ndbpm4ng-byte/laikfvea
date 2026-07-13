@@ -50,6 +50,34 @@ export const homepageContent = {
       }
     ]
   },
+  lifestyle: {
+    label: "EVERYDAY LIFESTYLE",
+    heading: "Built for Every Day.",
+    body:
+      "Whether you're working, travelling, training or simply enjoying time at home, Laikfvea is designed to become part of your daily routine.",
+    cards: [
+      {
+        title: "HOME",
+        body:
+          "Start your morning with fresh hydrogen-rich water and make better hydration part of your everyday routine."
+      },
+      {
+        title: "OFFICE",
+        body:
+          "Stay refreshed throughout busy workdays with clean, hydrogen-rich water always within reach."
+      },
+      {
+        title: "GYM",
+        body:
+          "Prepare hydrogen water before training or enjoy it afterwards as part of your recovery routine."
+      },
+      {
+        title: "TRAVEL",
+        body: "Compact, rechargeable and designed to move with you wherever life takes you."
+      }
+    ],
+    placeholderImage: "/lifestyle/lifestyle-placeholder.svg"
+  },
   everydayHydration: {
     heading: "Better Hydration Starts Here.",
     body: [

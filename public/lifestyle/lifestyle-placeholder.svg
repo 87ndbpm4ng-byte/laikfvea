@@ -1,0 +1,30 @@
+<svg width="1400" height="1100" viewBox="0 0 1400 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="1100" fill="#F2F4F5"/>
+  <rect x="120" y="110" width="1160" height="880" rx="42" fill="#FAFAF8" stroke="white" stroke-width="2"/>
+  <ellipse cx="700" cy="820" rx="310" ry="54" fill="#1C1C1C" fill-opacity="0.08"/>
+  <ellipse cx="700" cy="510" rx="390" ry="390" stroke="#A7D8F5" stroke-opacity="0.42" stroke-width="2"/>
+  <ellipse cx="700" cy="510" rx="255" ry="255" stroke="#1C1C1C" stroke-opacity="0.08" stroke-width="2"/>
+  <line x1="255" y1="510" x2="1145" y2="510" stroke="#1C1C1C" stroke-opacity="0.06" stroke-width="2"/>
+  <line x1="700" y1="210" x2="700" y2="820" stroke="#1C1C1C" stroke-opacity="0.05" stroke-width="2"/>
+  <g filter="url(#shadow)">
+    <rect x="580" y="230" width="240" height="590" rx="78" fill="white" fill-opacity="0.76" stroke="#1C1C1C" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="610" y="275" width="180" height="66" rx="32" fill="#F2F4F5" stroke="#1C1C1C" stroke-opacity="0.12" stroke-width="2"/>
+    <rect x="626" y="390" width="148" height="270" rx="74" fill="#A7D8F5" fill-opacity="0.09" stroke="#A7D8F5" stroke-opacity="0.26" stroke-width="2"/>
+    <circle cx="700" cy="518" r="34" stroke="#1C1C1C" stroke-opacity="0.18" stroke-width="2"/>
+    <rect x="635" y="705" width="130" height="54" rx="27" fill="#F2F4F5" stroke="#1C1C1C" stroke-opacity="0.11" stroke-width="2"/>
+  </g>
+  <g opacity="0.72">
+    <rect x="245" y="300" width="178" height="118" rx="22" fill="white" stroke="#1C1C1C" stroke-opacity="0.08"/>
+    <line x1="285" y1="338" x2="382" y2="338" stroke="#1C1C1C" stroke-opacity="0.16" stroke-width="2"/>
+    <line x1="285" y1="372" x2="355" y2="372" stroke="#1C1C1C" stroke-opacity="0.1" stroke-width="2"/>
+    <rect x="960" y="640" width="190" height="126" rx="24" fill="white" stroke="#1C1C1C" stroke-opacity="0.08"/>
+    <circle cx="1010" cy="703" r="24" fill="#A7D8F5" fill-opacity="0.22"/>
+    <line x1="1052" y1="684" x2="1110" y2="684" stroke="#1C1C1C" stroke-opacity="0.14" stroke-width="2"/>
+    <line x1="1052" y1="718" x2="1092" y2="718" stroke="#1C1C1C" stroke-opacity="0.1" stroke-width="2"/>
+  </g>
+  <defs>
+    <filter id="shadow" x="520" y="190" width="360" height="710" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="26" stdDeviation="28" flood-color="#1C1C1C" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+</svg>

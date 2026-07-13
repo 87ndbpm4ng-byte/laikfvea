@@ -1,8 +1,8 @@
 import { BottleExplorerSection } from "@/components/home/BottleExplorerSection";
+import { BuiltForEveryDaySection } from "@/components/home/BuiltForEveryDaySection";
 import { ComparisonSection } from "@/components/home/ComparisonSection";
 import { DesignedAroundEverySipSection } from "@/components/home/DesignedAroundEverySipSection";
 import { EngineeringSection } from "@/components/home/EngineeringSection";
-import { EverydayHydrationSection } from "@/components/home/EverydayHydrationSection";
 import { FinalCTASection } from "@/components/home/FinalCTASection";
 import { HeroSection } from "@/components/home/HeroSection";
 import { HowItWorksSection } from "@/components/home/HowItWorksSection";
@@ -14,7 +14,7 @@ export default function Page() {
       <HeroSection />
       <ComparisonSection />
       <HydrogenInhalationSection />
-      <EverydayHydrationSection />
+      <BuiltForEveryDaySection />
       <DesignedAroundEverySipSection />
       <BottleExplorerSection />
       <HowItWorksSection />
