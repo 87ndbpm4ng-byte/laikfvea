@@ -52,22 +52,10 @@ export const homepageContent = {
   },
   lifestyle: {
     label: "EVERYDAY LIFESTYLE",
-    heading: "Built for Every Day.",
+    heading: "Designed for Every Moment.",
     body:
       "Whether you're working, travelling, training or simply enjoying time at home, Laikfvea is designed to become part of your daily routine.",
-    cards: [
-      {
-        title: "HOME",
-        body:
-          "Start your morning with fresh hydrogen-rich water and make better hydration part of your everyday routine.",
-        image: "/lifestyle/lifestyle-placeholder.svg"
-      },
-      {
-        title: "OFFICE",
-        body:
-          "Stay refreshed throughout busy workdays with clean, hydrogen-rich water always within reach.",
-        image: "/lifestyle/lifestyle-placeholder.svg"
-      },
+    features: [
       {
         title: "GYM",
         body:
@@ -78,6 +66,12 @@ export const homepageContent = {
         title: "TRAVEL",
         body: "Compact, rechargeable and designed to move with you wherever life takes you.",
         image: "/lifestyle/travel.jpg"
+      },
+      {
+        title: "WORK",
+        body:
+          "Stay refreshed throughout busy workdays with clean, hydrogen-rich water always within reach.",
+        image: "/lifestyle/lifestyle-placeholder.svg"
       }
     ]
   },

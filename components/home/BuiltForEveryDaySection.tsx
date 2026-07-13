@@ -1,57 +1,75 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import { homepageContent } from "@/content/homepage";
-import { MotionSection } from "@/components/ui/MotionSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+
+const rowVariants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0 }
+};
 
 export function BuiltForEveryDaySection() {
   const content = homepageContent.lifestyle;
+  const reduceMotion = useReducedMotion();
 
   return (
-    <MotionSection id="everyday-lifestyle" className="bg-white px-6 py-28 sm:px-8 lg:px-10 lg:py-36">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-        <div className="relative order-first min-h-[420px] overflow-hidden rounded-brand bg-panel shadow-[0_28px_90px_rgba(28,28,28,0.065)] sm:min-h-[560px] lg:order-none">
-          <Image
-            src="/lifestyle/lifestyle-placeholder.svg"
-            alt="Abstract Laikfvea daily routine visual"
-            fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover"
-          />
-        </div>
+    <section id="everyday-lifestyle" className="bg-white px-6 py-28 sm:px-8 lg:px-10 lg:py-36">
+      <div className="mx-auto max-w-[1400px]">
+        <SectionHeading eyebrow={content.label} title={content.heading} center>
+          <p>{content.body}</p>
+        </SectionHeading>
 
-        <div>
-          <SectionHeading eyebrow={content.label} title={content.heading}>
-            <p>{content.body}</p>
-          </SectionHeading>
+        <div className="mt-20 grid gap-10 lg:gap-12">
+          {content.features.map((feature, index) => {
+            const imageFirst = index !== 1;
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {content.cards.map((card) => (
-              <article
-                key={card.title}
-                className="group flex h-full flex-col overflow-hidden rounded-brand bg-white shadow-[0_20px_60px_rgba(28,28,28,0.055)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(28,28,28,0.075)]"
+            return (
+              <motion.article
+                key={feature.title}
+                className="group grid overflow-hidden rounded-[24px] bg-white shadow-[0_24px_80px_rgba(28,28,28,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_34px_110px_rgba(28,28,28,0.085)] lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-stretch"
+                initial={reduceMotion ? false : "hidden"}
+                whileInView="visible"
+                viewport={{ once: true, margin: "-120px" }}
+                transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+                variants={rowVariants}
               >
-                <div className="relative aspect-[4/3] min-h-[220px] overflow-hidden rounded-t-brand bg-[#F4F5F5] p-5 sm:p-6">
-                  <div className="relative h-full w-full">
+                <div
+                  className={`relative min-h-[340px] overflow-hidden rounded-[24px] bg-[#F4F5F5] sm:min-h-[460px] lg:min-h-[560px] ${
+                    imageFirst ? "lg:order-1" : "lg:order-2"
+                  }`}
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.82),rgba(242,244,245,0.48))]" />
+                  <div className="absolute inset-5 overflow-hidden rounded-[18px] sm:inset-7">
                     <Image
-                      src={card.image}
-                      alt={`${card.title.toLowerCase()} lifestyle`}
+                      src={feature.image}
+                      alt={`${feature.title.toLowerCase()} lifestyle`}
                       fill
-                      sizes="(min-width: 1024px) 20vw, (min-width: 640px) 42vw, 100vw"
-                      className="object-contain object-center transition duration-500 group-hover:scale-[1.015]"
+                      sizes="(min-width: 1024px) 60vw, 100vw"
+                      className="object-contain object-center transition duration-700 group-hover:scale-[1.02]"
                     />
                   </div>
                 </div>
-                <div className="flex flex-1 flex-col p-7">
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-ink">
-                    {card.title}
+
+                <div
+                  className={`flex min-h-[320px] flex-col justify-center px-8 py-12 sm:px-12 lg:min-h-[560px] lg:px-16 ${
+                    imageFirst ? "lg:order-2" : "lg:order-1"
+                  }`}
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">
+                    Everyday Lifestyle
+                  </p>
+                  <h3 className="mt-5 text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl">
+                    {feature.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-7 text-muted">{card.body}</p>
+                  <p className="mt-6 text-base leading-8 text-muted sm:text-lg">{feature.body}</p>
                 </div>
-              </article>
-            ))}
-          </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
-    </MotionSection>
+    </section>
   );
 }
