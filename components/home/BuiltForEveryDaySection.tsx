@@ -28,18 +28,20 @@ export function BuiltForEveryDaySection() {
             {content.cards.map((card) => (
               <article
                 key={card.title}
-                className="group overflow-hidden rounded-brand bg-white shadow-[0_20px_60px_rgba(28,28,28,0.055)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(28,28,28,0.075)]"
+                className="group flex h-full flex-col overflow-hidden rounded-brand bg-white shadow-[0_20px_60px_rgba(28,28,28,0.055)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(28,28,28,0.075)]"
               >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-t-brand bg-panel">
-                  <Image
-                    src={card.image}
-                    alt={`${card.title.toLowerCase()} lifestyle`}
-                    fill
-                    sizes="(min-width: 1024px) 20vw, (min-width: 640px) 42vw, 100vw"
-                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                  />
+                <div className="relative aspect-[4/3] min-h-[220px] overflow-hidden rounded-t-brand bg-[#F4F5F5] p-5 sm:p-6">
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={card.image}
+                      alt={`${card.title.toLowerCase()} lifestyle`}
+                      fill
+                      sizes="(min-width: 1024px) 20vw, (min-width: 640px) 42vw, 100vw"
+                      className="object-contain object-center transition duration-500 group-hover:scale-[1.015]"
+                    />
+                  </div>
                 </div>
-                <div className="p-7">
+                <div className="flex flex-1 flex-col p-7">
                   <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-ink">
                     {card.title}
                   </h3>
