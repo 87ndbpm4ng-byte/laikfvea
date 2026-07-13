@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { PageContainer } from "@/components/layout/PageContainer";
+import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -10,13 +14,11 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Laikfvea | Hydration, Reinvented",
-  description:
-    "Premium hydrogen water technology designed to elevate everyday hydration. Explore Laikfvea GO and PRO, then purchase securely through Amazon.",
+  title: siteConfig.title,
+  description: siteConfig.description,
   openGraph: {
-    title: "Laikfvea | Hydration, Reinvented",
-    description:
-      "Premium hydrogen water technology designed to elevate everyday hydration. Explore Laikfvea GO and PRO, then purchase securely through Amazon.",
+    title: siteConfig.title,
+    description: siteConfig.description,
     type: "website"
   }
 };
@@ -29,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.className} ${montserrat.variable} bg-canvas text-ink antialiased`}>
-        {children}
+        <Header />
+        <PageContainer>{children}</PageContainer>
+        <Footer />
       </body>
     </html>
   );

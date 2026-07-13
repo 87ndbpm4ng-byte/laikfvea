@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { HydrogenWaterPage } from "@/components/hydrogen-water-page";
+import { HydrogenWaterFAQ } from "@/components/hydrogen-water/HydrogenWaterFAQ";
+import { HydrogenWaterHero } from "@/components/hydrogen-water/HydrogenWaterHero";
+import { WhatIsHydrogenWater } from "@/components/hydrogen-water/WhatIsHydrogenWater";
+import { WhyPeopleChooseIt } from "@/components/hydrogen-water/WhyPeopleChooseIt";
 
 export const metadata: Metadata = {
   title: "Hydrogen Water | Laikfvea",
@@ -8,5 +11,12 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <HydrogenWaterPage />;
+  return (
+    <>
+      <HydrogenWaterHero />
+      <WhatIsHydrogenWater />
+      <WhyPeopleChooseIt />
+      <HydrogenWaterFAQ />
+    </>
+  );
 }
