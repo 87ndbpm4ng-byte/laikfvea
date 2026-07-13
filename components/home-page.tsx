@@ -4,7 +4,8 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 
-export const amazonUrl = "https://www.amazon.com/";
+export const AMAZON_GO_URL =
+  "https://www.amazon.com/Hydrogen-Water-Bottle-Generator-Leak-Resistant/dp/B0G2SDZKLB/ref=sr_1_4?dib=eyJ2IjoiMSJ9.Z8sqXUyTTbv6fTUD1jMdvmvFomRqJqJtynfghY6BNgK5ocQnuK5-b-zfNTw05QEhbMUM_b__v6nE5EBClPSl8M_OqIkQWVa5fFTBGw0ftkc.pQi7R0gSODeF8cagytjIAaliQk5o-3TAZKajAIcmnjY&dib_tag=se&keywords=LAIKFVEA&qid=1783925548&sr=8-4";
 export const logoBlack = "/logos/logo black.svg";
 export const goBottle = "/go/go-transparent.png";
 export const proBottle = "/pro/pro-transparent.png";
@@ -89,7 +90,7 @@ export function Header() {
             <a
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-ink/72 transition hover:text-ink"
+              className="text-sm font-medium text-ink/72 transition hover:text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas"
             >
               {item.label}
             </a>
@@ -134,7 +135,7 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="rounded-brand px-2 py-4 text-lg font-medium text-ink"
+                className="rounded-brand px-2 py-4 text-lg font-medium text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
@@ -166,14 +167,19 @@ function Logo() {
 
 export function AmazonButton({
   compact = false,
-  label = "Buy on Amazon"
+  label = "Buy on Amazon",
+  ariaLabel = "Buy Laikfvea GO on Amazon"
 }: {
   compact?: boolean;
   label?: string;
+  ariaLabel?: string;
 }) {
   return (
     <a
-      href={amazonUrl}
+      href={AMAZON_GO_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={ariaLabel}
       className={`inline-flex items-center justify-center rounded-brand bg-ink text-center font-semibold text-white shadow-[0_14px_34px_rgba(28,28,28,0.12)] transition hover:-translate-y-0.5 hover:bg-ink/88 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas ${
         compact ? "min-h-11 px-5 text-sm" : "min-h-12 px-6 text-sm sm:text-base"
       }`}
@@ -409,7 +415,7 @@ function ProductCard({
 function ComparisonSection() {
   return (
     <MotionSection id="products" className="px-6 py-28 sm:px-8 lg:px-10 lg:py-36">
-      <div className="mx-auto max-w-7xl">
+      <div id="comparison" className="mx-auto max-w-7xl">
         <TextBlock eyebrow="THE LAIKFVEA COLLECTION" title="Choose Your Bottle." center>
           <p>
             Two hydrogen water systems designed for different routines — from effortless everyday
@@ -525,24 +531,33 @@ function InhalationSection() {
 }
 
 export function Footer() {
+  const footerLinks = [
+    ["Products", "/#products"],
+    ["Hydrogen Water", "/hydrogen-water"],
+    ["Technology", "/#technology"],
+    ["About", "/#about"],
+    ["Support", "/#support"],
+    ["Amazon", AMAZON_GO_URL],
+    ["Privacy", "/#support"],
+    ["Terms", "/#support"],
+    ["Instagram", "/#support"],
+    ["YouTube", "/#support"]
+  ];
+
   return (
     <footer id="support" className="border-t border-ink/8 bg-white px-6 py-12 sm:px-8 lg:px-10">
       <div className="mx-auto flex max-w-7xl flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
         <Logo />
         <div className="flex flex-wrap gap-x-7 gap-y-4 text-sm font-medium text-muted">
-          {[
-            ["Products", "/#products"],
-            ["Hydrogen Water", "/hydrogen-water"],
-            ["Technology", "/#technology"],
-            ["About", "/#about"],
-            ["Support", "/#support"],
-            ["Amazon", amazonUrl],
-            ["Privacy", "#"],
-            ["Terms", "#"],
-            ["Instagram", "#"],
-            ["YouTube", "#"]
-          ].map(([item, href]) => (
-            <a key={item} href={href} className="transition hover:text-ink">
+          {footerLinks.map(([item, href]) => (
+            <a
+              key={item}
+              href={href}
+              target={href === AMAZON_GO_URL ? "_blank" : undefined}
+              rel={href === AMAZON_GO_URL ? "noopener noreferrer" : undefined}
+              aria-label={href === AMAZON_GO_URL ? "Buy Laikfvea GO on Amazon" : undefined}
+              className="transition hover:text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white"
+            >
               {item}
             </a>
           ))}
@@ -577,7 +592,7 @@ export function HomePage() {
               </p>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                 <AmazonButton />
-                <SecondaryButton href="#technology">Explore Technology</SecondaryButton>
+                <SecondaryButton href="/#technology">Explore Technology</SecondaryButton>
               </div>
             </motion.div>
             <HeroProduct />
@@ -745,7 +760,7 @@ export function HomePage() {
               </p>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                 <AmazonButton />
-                <SecondaryButton href="#products">Compare Models</SecondaryButton>
+                <SecondaryButton href="/#products">Compare Models</SecondaryButton>
               </div>
             </div>
             <ProductStage

@@ -19,6 +19,16 @@ body {
   min-height: 100vh;
 }
 
+#products,
+#comparison,
+#go,
+#pro,
+#technology,
+#about,
+#support {
+  scroll-margin-top: 6rem;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
