@@ -59,24 +59,27 @@ export const homepageContent = {
       {
         title: "HOME",
         body:
-          "Start your morning with fresh hydrogen-rich water and make better hydration part of your everyday routine."
+          "Start your morning with fresh hydrogen-rich water and make better hydration part of your everyday routine.",
+        image: "/lifestyle/lifestyle-placeholder.svg"
       },
       {
         title: "OFFICE",
         body:
-          "Stay refreshed throughout busy workdays with clean, hydrogen-rich water always within reach."
+          "Stay refreshed throughout busy workdays with clean, hydrogen-rich water always within reach.",
+        image: "/lifestyle/lifestyle-placeholder.svg"
       },
       {
         title: "GYM",
         body:
-          "Prepare hydrogen water before training or enjoy it afterwards as part of your recovery routine."
+          "Prepare hydrogen water before training or enjoy it afterwards as part of your recovery routine.",
+        image: "/lifestyle/gym.jpg"
       },
       {
         title: "TRAVEL",
-        body: "Compact, rechargeable and designed to move with you wherever life takes you."
+        body: "Compact, rechargeable and designed to move with you wherever life takes you.",
+        image: "/lifestyle/travel.jpg"
       }
-    ],
-    placeholderImage: "/lifestyle/lifestyle-placeholder.svg"
+    ]
   },
   everydayHydration: {
     heading: "Better Hydration Starts Here.",
