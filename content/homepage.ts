@@ -114,23 +114,28 @@ export const homepageContent = {
     details: [
       {
         title: "Drinking Lid",
-        body: "Designed for comfortable everyday drinking and easy cleaning."
+        body: "Designed for comfortable everyday drinking and easy cleaning.",
+        highlightTarget: "lid"
       },
       {
         title: "Bottle Body",
-        body: "Durable transparent body engineered for everyday portability."
+        body: "Durable transparent body engineered for everyday portability.",
+        highlightTarget: "body"
       },
       {
         title: "Electrolysis Chamber",
-        body: "The precision-engineered core where hydrogen-rich water is generated."
+        body: "The precision-engineered core where hydrogen-rich water is generated using advanced PEM/SPE electrolysis technology.",
+        highlightTarget: "chamber"
       },
       {
         title: "USB-C Charging",
-        body: "Fast and convenient charging using modern USB-C."
+        body: "Fast and convenient charging using modern USB-C.",
+        highlightTarget: "charging"
       },
       {
         title: "Stable Base",
-        body: "Designed for stability and reliable everyday operation."
+        body: "Designed for stability and reliable everyday operation.",
+        highlightTarget: "base"
       }
     ]
   },
