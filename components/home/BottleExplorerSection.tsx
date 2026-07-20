@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { products } from "@/config/products";
 import { homepageContent } from "@/content/homepage";
@@ -9,15 +10,21 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 type BottleFeature = (typeof homepageContent.bottleExplorer.details)[number];
 
-const markerPositions = [
-  { x: 41, y: 20 },
-  { x: 39, y: 43 },
-  { x: 42, y: 65 },
-  { x: 44, y: 79 },
-  { x: 40, y: 92 }
+const chipPositions = [
+  { left: 50, top: 8 },
+  { left: 17, top: 44 },
+  { left: 82, top: 44 },
+  { left: 22, top: 72 },
+  { left: 50, top: 88 }
 ];
 
-const controlCenters = [22, 39, 56, 73, 88];
+const highlightPositions = [
+  { left: 50, top: 18, width: 86, height: 54 },
+  { left: 50, top: 45, width: 118, height: 178 },
+  { left: 50, top: 67, width: 112, height: 72 },
+  { left: 54, top: 80, width: 74, height: 52 },
+  { left: 50, top: 91, width: 112, height: 44 }
+];
 
 function DetailPanel({ feature }: { feature: BottleFeature }) {
   return (
@@ -32,21 +39,21 @@ function DetailPanel({ feature }: { feature: BottleFeature }) {
   );
 }
 
-function Marker({
+function FeatureChip({
   feature,
   active,
-  index,
-  onSelect
+  position,
+  onSelect,
+  index
 }: {
   feature: BottleFeature;
   active: boolean;
-  index: number;
+  position: { left: number; top: number };
   onSelect: () => void;
+  index: number;
 }) {
-  const marker = markerPositions[index];
-
   return (
-    <button
+    <motion.button
       type="button"
       aria-label={`Show ${feature.title} detail`}
       aria-pressed={active}
@@ -54,86 +61,19 @@ function Marker({
       onMouseEnter={onSelect}
       onFocus={onSelect}
       onPointerDown={onSelect}
-      className={`absolute z-20 hidden h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas lg:flex ${
-        active ? "scale-105 border-ink bg-white" : "border-ink/12 bg-white/78 hover:scale-105"
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.45, delay: index * 0.04, ease: [0.22, 1, 0.36, 1] }}
+      className={`absolute z-20 hidden min-h-10 -translate-x-1/2 items-center rounded-full border px-4 text-sm font-semibold transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas lg:inline-flex ${
+        active
+          ? "scale-[1.03] border-ink bg-ink text-white"
+          : "border-ink/8 bg-white text-ink/68 hover:border-ink/20 hover:text-ink"
       }`}
-      style={{ left: `${marker.x}%`, top: `${marker.y}%` }}
+      style={{ left: `${position.left}%`, top: `${position.top}%` }}
     >
-      <span className={`h-2 w-2 rounded-full ${active ? "bg-ink" : "bg-ink/42"}`} />
-    </button>
-  );
-}
-
-function ConnectorMap({ selectedIndex }: { selectedIndex: number }) {
-  return (
-    <svg
-      className="pointer-events-none absolute inset-0 z-10 hidden lg:block"
-      viewBox="0 0 100 100"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-    >
-      {markerPositions.map((marker, index) => {
-        const active = selectedIndex === index;
-        const controlY = controlCenters[index];
-        const bendX = 56;
-
-        return (
-          <path
-            key={`${marker.x}-${marker.y}`}
-            d={`M ${marker.x} ${marker.y} H ${bendX} V ${controlY} H 67`}
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={active ? 0.48 : 0.32}
-            className={active ? "text-ink/62" : "text-ink/30"}
-            vectorEffect="non-scaling-stroke"
-          />
-        );
-      })}
-    </svg>
-  );
-}
-
-function ControlStack({
-  features,
-  selected,
-  onSelect
-}: {
-  features: BottleFeature[];
-  selected: BottleFeature;
-  onSelect: (feature: BottleFeature) => void;
-}) {
-  return (
-    <div className="absolute bottom-[12%] right-[4%] top-[18%] z-20 hidden w-[36%] max-w-[270px] flex-col justify-between lg:flex">
-      {features.map((feature) => {
-        const active = selected.title === feature.title;
-
-        return (
-          <button
-            key={feature.title}
-            type="button"
-            aria-label={`Show ${feature.title} detail`}
-            aria-pressed={active}
-            onClick={() => onSelect(feature)}
-            onMouseEnter={() => onSelect(feature)}
-            onFocus={() => onSelect(feature)}
-            onPointerDown={() => onSelect(feature)}
-            className={`flex min-h-12 w-full items-center gap-3 rounded-full border px-4 text-left text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas ${
-              active
-                ? "border-ink/30 bg-white text-ink"
-                : "border-ink/8 bg-white/64 text-ink/58 hover:border-ink/18 hover:bg-white/82 hover:text-ink"
-            }`}
-          >
-            <span
-              className={`h-2.5 w-2.5 shrink-0 rounded-full border transition ${
-                active ? "border-ink bg-ink" : "border-ink/28 bg-white"
-              }`}
-              aria-hidden="true"
-            />
-            <span className="whitespace-nowrap">{feature.title}</span>
-          </button>
-        );
-      })}
-    </div>
+      {feature.title}
+    </motion.button>
   );
 }
 
@@ -189,44 +129,56 @@ function ProductCanvas({
   selected: BottleFeature;
   onSelect: (feature: BottleFeature) => void;
 }) {
+  const reduceMotion = useReducedMotion();
   const selectedIndex = Math.max(
     0,
     features.findIndex((feature) => feature.title === selected.title)
   );
+  const highlight = highlightPositions[selectedIndex];
 
   return (
     <div
       data-product-canvas
       className="relative overflow-hidden rounded-[24px] border border-ink/6 bg-[#F6F7F6] p-5 shadow-[0_24px_80px_rgba(28,28,28,0.055)] sm:p-7 lg:p-8"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_34%_48%,rgba(167,216,245,0.18),transparent_34%),radial-gradient(circle_at_44%_82%,rgba(255,255,255,0.82),transparent_38%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_44%,rgba(167,216,245,0.14),transparent_34%),radial-gradient(circle_at_50%_82%,rgba(255,255,255,0.82),transparent_38%)]" />
 
       <div className="relative mx-auto min-h-[500px] max-w-[780px] sm:min-h-[620px] lg:min-h-[660px]">
-        <div className="absolute bottom-[12%] left-[38%] h-12 w-[30%] -translate-x-1/2 rounded-full bg-ink/10 blur-2xl" />
+        <div className="absolute bottom-[11%] left-1/2 h-12 w-[34%] -translate-x-1/2 rounded-full bg-ink/10 blur-2xl" />
 
-        <div className="absolute inset-y-[8%] left-1/2 w-[48%] max-w-[280px] -translate-x-1/2 sm:w-[38%] lg:left-[38%] lg:w-[38%] lg:max-w-[315px]">
+        <motion.div
+          className="absolute inset-y-[5%] left-1/2 w-[55%] max-w-[340px] -translate-x-1/2 sm:w-[44%] lg:w-[44%] lg:max-w-[380px]"
+          animate={reduceMotion ? undefined : { y: [0, -8, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div
+            className="pointer-events-none absolute z-10 rounded-full bg-white/72 blur-xl transition-all duration-300"
+            style={{
+              left: `calc(${highlight.left}% - ${highlight.width / 2}px)`,
+              top: `calc(${highlight.top}% - ${highlight.height / 2}px)`,
+              width: `${highlight.width}px`,
+              height: `${highlight.height}px`
+            }}
+          />
           <ProductImage
             src={products.pro.image}
             alt="Laikfvea PRO bottle interactive detail view"
             priority
-            sizes="(min-width: 1024px) 24vw, 64vw"
+            sizes="(min-width: 1024px) 30vw, 72vw"
             className="scale-100"
           />
-        </div>
-
-        <ConnectorMap selectedIndex={selectedIndex} />
+        </motion.div>
 
         {features.map((feature, index) => (
-          <Marker
-            key={`${feature.title}-marker`}
+          <FeatureChip
+            key={feature.title}
             feature={feature}
             index={index}
             active={selected.title === feature.title}
+            position={chipPositions[index]}
             onSelect={() => onSelect(feature)}
           />
         ))}
-
-        <ControlStack features={features} selected={selected} onSelect={onSelect} />
       </div>
 
       <MobileAccordion features={features} selected={selected} onSelect={onSelect} />
