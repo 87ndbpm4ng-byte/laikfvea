@@ -21,15 +21,15 @@ export const SITE_CONFIG = {
     supportPage: "/support"
   },
   amazon: {
-    go: "https://www.amazon.com/Hydrogen-Water-Bottle-Generator-Leak-Resistant/dp/B0G2SDZKLB/ref=sr_1_4?dib=eyJ2IjoiMSJ9.Z8sqXUyTTbv6fTUD1jMdvmvFomRqJqJtynfghY6BNgK5ocQnuK5-b-zfNTw05QEhbMUM_b__v6nE5EBClPSl8M_OqIkQWVa5fFTBGw0ftkc.pQi7R0gSODeF8cagytjIAaliQk5o-3TAZKajAIcmnjY&dib_tag=se&keywords=LAIKFVEA&qid=1783925548&sr=8-4",
-    pro: ""
+    go: "https://www.amazon.com/LAIKFVEA-Hydrogen-Water-Bottle-Leak-Resistant/dp/B0G39DP3NK/ref=sr_1_1?crid=393PUHPYAVJXJ&dib=eyJ2IjoiMSJ9.Z8sqXUyTTbv6fTUD1jMdvkmrQgS5BVhV_2ecU8Lacno.65nbugW5W7bTHNaUzTkgZ9vzuwukomqMqEV-Mh-8T3Q&dib_tag=se&keywords=laikfvea&qid=1773919440&sprefix=laikfve%2Caps%2C280&sr=8-1",
+    pro: "https://www.amazon.com/Hydrogen-Water-Bottle-Generator-Leak-Resistant/dp/B0G3993KY8/ref=sr_1_2?crid=393PUHPYAVJXJ&dib=eyJ2IjoiMSJ9.Z8sqXUyTTbv6fTUD1jMdvkmrQgS5BVhV_2ecU8Lacno.65nbugW5W7bTHNaUzTkgZ9vzuwukomqMqEV-Mh-8T3Q&dib_tag=se&keywords=laikfvea&qid=1773919440&sprefix=laikfve%2Caps%2C280&sr=8-2"
   },
   social: {
-    instagram: "https://www.instagram.com/",
-    pinterest: "https://www.pinterest.com/"
+    instagram: "https://www.instagram.com/laikfvea",
+    pinterest: ""
   },
   support: {
-    email: "support@laikfvea.com"
+    email: "laikfvea@gmail.com"
   }
 };
 

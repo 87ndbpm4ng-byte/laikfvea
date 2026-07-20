@@ -23,6 +23,9 @@ function PinterestIcon() {
   );
 }
 
+const socialLinkClass =
+  "inline-flex h-10 w-10 items-center justify-center rounded-brand border border-ink/10 bg-white transition hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(28,28,28,0.08)] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white";
+
 const socialLinks = [
   { label: "Instagram", href: SITE_CONFIG.social.instagram, icon: <InstagramIcon /> },
   { label: "Pinterest", href: SITE_CONFIG.social.pinterest, icon: <PinterestIcon /> }
@@ -52,18 +55,28 @@ export function Footer() {
 
           <div className="flex flex-col gap-5 sm:items-end">
             <div className="flex gap-3 text-ink">
-              {socialLinks.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={item.label}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-brand border border-ink/10 bg-white transition hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(28,28,28,0.08)] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white"
-                >
-                  {item.icon}
-                </a>
-              ))}
+              {socialLinks.map((item) =>
+                item.href ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.label}
+                    className={socialLinkClass}
+                  >
+                    {item.icon}
+                  </a>
+                ) : (
+                  <span
+                    key={item.label}
+                    aria-label={`${item.label} link coming soon`}
+                    className={`${socialLinkClass} cursor-default opacity-45`}
+                  >
+                    {item.icon}
+                  </span>
+                )
+              )}
             </div>
             <a
               href={`mailto:${SITE_CONFIG.support.email}`}
