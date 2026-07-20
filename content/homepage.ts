@@ -114,40 +114,23 @@ export const homepageContent = {
     details: [
       {
         title: "Drinking Lid",
-        body: "Designed for comfortable everyday drinking and easy removal.",
-        marker: { x: 50, y: 18 },
-        label: { x: 3, y: 13 },
-        line: { width: 150, rotate: 4 }
+        body: "Designed for comfortable everyday drinking and easy cleaning."
       },
       {
         title: "Bottle Body",
-        body:
-          "A clear, durable vessel designed to showcase the water and hydrogen generation process.",
-        marker: { x: 47, y: 47 },
-        label: { x: 3, y: 45 },
-        line: { width: 142, rotate: 0 }
+        body: "Durable transparent body engineered for everyday portability."
       },
       {
         title: "Electrolysis Chamber",
-        body:
-          "The technology core where Laikfvea prepares hydrogen-rich water through a precise electrolysis cycle.",
-        marker: { x: 51, y: 70 },
-        label: { x: 67, y: 58 },
-        line: { width: 118, rotate: -26 }
+        body: "The precision-engineered core where hydrogen-rich water is generated."
       },
       {
         title: "USB-C Charging",
-        body: "Modern USB-C charging for convenient use at home, work or while travelling.",
-        marker: { x: 53, y: 84 },
-        label: { x: 67, y: 76 },
-        line: { width: 98, rotate: -18 }
+        body: "Fast and convenient charging using modern USB-C."
       },
       {
         title: "Stable Base",
-        body: "A weighted foundation designed to keep the bottle secure during operation.",
-        marker: { x: 48, y: 91 },
-        label: { x: 67, y: 89 },
-        line: { width: 112, rotate: -1 }
+        body: "Designed for stability and reliable everyday operation."
       }
     ]
   },
