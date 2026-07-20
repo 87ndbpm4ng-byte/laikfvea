@@ -10,11 +10,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 type BottleFeature = (typeof homepageContent.bottleExplorer.details)[number];
 
 const markerPositions = [
-  { x: 38, y: 20 },
-  { x: 35, y: 43 },
-  { x: 39, y: 65 },
-  { x: 42, y: 79 },
-  { x: 37, y: 90 }
+  { x: 41, y: 20 },
+  { x: 39, y: 43 },
+  { x: 42, y: 65 },
+  { x: 44, y: 79 },
+  { x: 40, y: 92 }
 ];
 
 const controlCenters = [22, 39, 56, 73, 88];
@@ -23,11 +23,11 @@ function DetailPanel({ feature }: { feature: BottleFeature }) {
   return (
     <div
       data-selected-detail
-      className="mt-10 hidden max-w-[420px] rounded-brand border border-ink/8 bg-panel/70 p-6 lg:block"
+      className="mt-8 hidden max-w-[420px] rounded-brand border border-ink/8 bg-panel/70 p-5 lg:block"
     >
       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">Selected detail</p>
-      <h3 className="mt-4 text-2xl font-semibold text-ink">{feature.title}</h3>
-      <p className="mt-3 text-sm leading-7 text-muted sm:text-base">{feature.body}</p>
+      <h3 className="mt-3 text-xl font-semibold text-ink">{feature.title}</h3>
+      <p className="mt-2 text-sm leading-6 text-muted">{feature.body}</p>
     </div>
   );
 }
@@ -54,8 +54,8 @@ function Marker({
       onMouseEnter={onSelect}
       onFocus={onSelect}
       onPointerDown={onSelect}
-      className={`absolute z-20 hidden h-7 w-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas lg:flex ${
-        active ? "scale-110 border-ink bg-white" : "border-ink/12 bg-white/78 hover:scale-105"
+      className={`absolute z-20 hidden h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas lg:flex ${
+        active ? "scale-105 border-ink bg-white" : "border-ink/12 bg-white/78 hover:scale-105"
       }`}
       style={{ left: `${marker.x}%`, top: `${marker.y}%` }}
     >
@@ -75,16 +75,16 @@ function ConnectorMap({ selectedIndex }: { selectedIndex: number }) {
       {markerPositions.map((marker, index) => {
         const active = selectedIndex === index;
         const controlY = controlCenters[index];
-        const bendX = 58;
+        const bendX = 56;
 
         return (
           <path
             key={`${marker.x}-${marker.y}`}
-            d={`M ${marker.x} ${marker.y} H ${bendX} V ${controlY} H 70`}
+            d={`M ${marker.x} ${marker.y} H ${bendX} V ${controlY} H 67`}
             fill="none"
             stroke="currentColor"
-            strokeWidth={active ? 0.42 : 0.26}
-            className={active ? "text-ink/58" : "text-ink/20"}
+            strokeWidth={active ? 0.48 : 0.32}
+            className={active ? "text-ink/62" : "text-ink/30"}
             vectorEffect="non-scaling-stroke"
           />
         );
@@ -202,9 +202,9 @@ function ProductCanvas({
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_34%_48%,rgba(167,216,245,0.18),transparent_34%),radial-gradient(circle_at_44%_82%,rgba(255,255,255,0.82),transparent_38%)]" />
 
       <div className="relative mx-auto min-h-[500px] max-w-[780px] sm:min-h-[620px] lg:min-h-[660px]">
-        <div className="absolute bottom-[12%] left-[35%] h-12 w-[28%] -translate-x-1/2 rounded-full bg-ink/10 blur-2xl" />
+        <div className="absolute bottom-[12%] left-[38%] h-12 w-[30%] -translate-x-1/2 rounded-full bg-ink/10 blur-2xl" />
 
-        <div className="absolute inset-y-[10%] left-1/2 w-[48%] max-w-[280px] -translate-x-1/2 sm:w-[38%] lg:left-[35%] lg:w-[34%]">
+        <div className="absolute inset-y-[8%] left-1/2 w-[48%] max-w-[280px] -translate-x-1/2 sm:w-[38%] lg:left-[38%] lg:w-[38%] lg:max-w-[315px]">
           <ProductImage
             src={products.pro.image}
             alt="Laikfvea PRO bottle interactive detail view"
