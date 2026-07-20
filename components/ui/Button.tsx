@@ -1,4 +1,4 @@
-import { AMAZON_GO_URL } from "@/config/links";
+import { SITE_CONFIG } from "@/config/site";
 
 export function AmazonButton({
   compact = false,
@@ -11,7 +11,7 @@ export function AmazonButton({
 }) {
   return (
     <a
-      href={AMAZON_GO_URL}
+      href={SITE_CONFIG.amazon.go}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ariaLabel}

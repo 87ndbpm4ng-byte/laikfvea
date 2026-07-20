@@ -41,7 +41,7 @@ Use this file to update GO or PRO product images, specs or descriptions used acr
 
 External and internal URLs live in `config/links.ts`.
 
-To update the Amazon GO product link, change `AMAZON_GO_URL` in `config/links.ts`.
+To update the Amazon GO product link, social links, or support email, change `SITE_CONFIG` in `config/site.ts`.
 
 ## Images
 

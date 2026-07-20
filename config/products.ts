@@ -13,7 +13,7 @@ export const products = {
     description:
       "Designed for convenient daily hydrogen-rich water at home, at work, at the gym and while travelling.",
     specs: [
-      "400 ml capacity",
+      "13.5 oz (400 ml) capacity",
       "Up to 1500 PPB hydrogen concentration",
       "5-minute enrichment cycle",
       "SPE/PEM technology",
@@ -29,7 +29,7 @@ export const products = {
     description:
       "Designed for users seeking higher hydrogen concentration, greater control and additional wellness functionality.",
     specs: [
-      "350 ml capacity",
+      "11.8 oz (350 ml) capacity",
       "Up to 9000 PPB hydrogen concentration",
       "3-minute and 18-minute enrichment modes",
       "Bluetooth app control",
