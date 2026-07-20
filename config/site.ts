@@ -13,6 +13,7 @@ export const SITE_CONFIG = {
     pro: "/#pro",
     goPage: "/products/go",
     proPage: "/products/pro",
+    app: "/#app",
     technology: "/#technology",
     technologyPage: "/technology",
     about: "/#about",
@@ -27,6 +28,10 @@ export const SITE_CONFIG = {
   social: {
     instagram: "https://www.instagram.com/laikfvea",
     pinterest: ""
+  },
+  app: {
+    ios: "https://apps.apple.com/app/id6736646427",
+    android: "https://www.pgyer.com/hydrogencup"
   },
   support: {
     email: "laikfvea@gmail.com"

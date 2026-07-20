@@ -1,3 +1,4 @@
+import { AppSection } from "@/components/home/AppSection";
 import { BottleExplorerSection } from "@/components/home/BottleExplorerSection";
 import { BuiltForEveryDaySection } from "@/components/home/BuiltForEveryDaySection";
 import { ComparisonSection } from "@/components/home/ComparisonSection";
@@ -19,6 +20,7 @@ export default function Page() {
       <BottleExplorerSection />
       <HowItWorksSection />
       <EngineeringSection />
+      <AppSection />
       <FinalCTASection />
     </>
   );

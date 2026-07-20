@@ -144,6 +144,20 @@ export const homepageContent = {
       "Up to 9000 PPB"
     ]
   },
+  app: {
+    label: "LAIKFVEA APP",
+    heading: "Your Water. Smarter.",
+    body:
+      "Connect your Laikfvea bottle to the mobile app to track your hydration, monitor bottle activity and manage your daily wellness routine from your phone.",
+    features: [
+      "Track your hydration routine",
+      "View bottle activity",
+      "Manage your Laikfvea devices",
+      "Access product guidance and support"
+    ],
+    iosCta: "App Store",
+    androidCta: "Android"
+  },
   finalCta: {
     heading: "Experience Everyday Hydration, Elevated.",
     body:
