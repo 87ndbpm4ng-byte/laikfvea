@@ -25,10 +25,9 @@ export function ProductCard({
       id={name.toLowerCase()}
       className="group grid overflow-hidden rounded-brand border border-ink/5 bg-white shadow-[0_32px_100px_rgba(28,28,28,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_36px_110px_rgba(28,28,28,0.095)] sm:grid-cols-[1.08fr_0.92fr]"
     >
-      <div className="relative min-h-[560px] overflow-hidden bg-[#F7F8F8] sm:min-h-[800px]">
-        <div className="absolute inset-x-6 bottom-8 top-10 rounded-[44px] bg-white/75" />
-        <div className="absolute inset-x-4 bottom-8 top-14 rounded-[48px] bg-accent/10 blur-3xl" />
-        <div className="absolute bottom-12 left-1/2 h-16 w-2/3 -translate-x-1/2 rounded-full bg-ink/12 blur-2xl" />
+      <div className="relative min-h-[560px] overflow-visible bg-[#F7F8F8] sm:min-h-[800px]">
+        <div className="absolute inset-x-8 bottom-10 top-14 rounded-[48px] bg-accent/10 blur-3xl" />
+        <div className="absolute bottom-12 left-1/2 h-14 w-3/5 -translate-x-1/2 rounded-full bg-ink/10 blur-2xl" />
         <ProductImage
           src={image}
           alt={alt}

@@ -23,7 +23,7 @@ export function ProductImage({
       priority={priority}
       sizes={sizes}
       unoptimized={unoptimized}
-      className={`object-contain ${className}`}
+      className={`object-contain drop-shadow-[0_28px_34px_rgba(28,28,28,0.12)] ${className}`}
     />
   );
 }
@@ -42,9 +42,9 @@ export function ProductStage({
   priority?: boolean;
 }) {
   return (
-    <div className={`relative overflow-hidden rounded-brand ${className}`}>
-      <div className="absolute inset-x-4 bottom-8 top-10 rounded-[48px] bg-accent/10 blur-3xl" />
-      <div className="absolute bottom-8 left-1/2 h-16 w-2/3 -translate-x-1/2 rounded-full bg-ink/12 blur-2xl" />
+    <div className={`relative overflow-visible rounded-brand ${className}`}>
+      <div className="absolute inset-x-8 bottom-12 top-12 rounded-[48px] bg-accent/10 blur-3xl" />
+      <div className="absolute bottom-10 left-1/2 h-14 w-3/5 -translate-x-1/2 rounded-full bg-ink/10 blur-2xl" />
       <ProductImage
         src={src}
         alt={alt}

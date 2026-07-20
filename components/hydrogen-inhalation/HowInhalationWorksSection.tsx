@@ -1,6 +1,7 @@
-import Image from "next/image";
+import { products } from "@/config/products";
 import { hydrogenInhalationContent } from "@/content/hydrogen-inhalation";
 import { MotionSection } from "@/components/ui/MotionSection";
+import { ProductStage } from "@/components/ui/ProductImage";
 
 const stepSymbols = ["01", "02", "03", "04"];
 
@@ -10,15 +11,12 @@ export function HowInhalationWorksSection() {
   return (
     <MotionSection className="bg-panel px-6 py-24 sm:px-8 lg:px-10 lg:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
-        <div className="relative min-h-[560px] overflow-hidden rounded-[24px] bg-white shadow-soft sm:min-h-[680px]">
-          <Image
-            src="/inhalation/setup.jpg"
-            alt="Close-up of the Laikfvea PRO bottle with inhalation tubing"
-            fill
-            sizes="(min-width: 1024px) 52vw, 100vw"
-            className="object-cover object-center"
-          />
-        </div>
+        <ProductStage
+          src={products.pro.image}
+          alt="Laikfvea PRO bottle prepared for hydrogen inhalation"
+          className="min-h-[560px] sm:min-h-[680px]"
+          imageClassName="scale-[1.12]"
+        />
 
         <div>
           <h2 className="text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl lg:text-6xl">

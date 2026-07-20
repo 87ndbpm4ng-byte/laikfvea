@@ -15,7 +15,7 @@ export function HydrogenInhalationSection() {
         <ProductStage
           src={products.pro.image}
           alt="Laikfvea PRO hydrogen inhalation system"
-          className="min-h-[560px] bg-white shadow-[0_28px_90px_rgba(28,28,28,0.065)]"
+          className="min-h-[560px]"
           imageClassName="scale-[1.12]"
         />
         <div>

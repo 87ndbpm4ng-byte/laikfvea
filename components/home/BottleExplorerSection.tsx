@@ -24,7 +24,7 @@ export function BottleExplorerSection() {
               <ProductStage
                 src={products.pro.image}
                 alt="Laikfvea PRO bottle detail view"
-                className="min-h-[540px] bg-white"
+                className="min-h-[540px]"
                 imageClassName="scale-[1.16]"
               />
               <div>
