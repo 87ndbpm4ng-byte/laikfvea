@@ -111,14 +111,45 @@ export const homepageContent = {
     heading: "Every Detail Has a Purpose.",
     body:
       "Explore the craftsmanship behind every component. From the electrolysis chamber to the charging system, each detail is designed to make better hydration feel effortless.",
-    details: {
-      "Drinking Lid": "A clean, comfortable top designed for everyday sipping and easy handling.",
-      "Bottle Body": "A refined transparent body that keeps the product focused on water, material and light.",
-      "Electrolysis Chamber":
-        "The technology core where Laikfvea prepares hydrogen-rich water through a precise cycle.",
-      "USB-C Charging": "Simple charging designed for home, work, travel and daily routines.",
-      "Stable Base": "A balanced base that keeps the bottle composed on desks, counters and gym benches."
-    }
+    details: [
+      {
+        title: "Drinking Lid",
+        body: "Designed for comfortable everyday drinking and easy removal.",
+        marker: { x: 52, y: 15 },
+        label: { x: 16, y: 10 },
+        line: { width: 118, rotate: -6 }
+      },
+      {
+        title: "Bottle Body",
+        body:
+          "A clear, durable vessel designed to showcase the water and hydrogen generation process.",
+        marker: { x: 46, y: 43 },
+        label: { x: 7, y: 42 },
+        line: { width: 126, rotate: 2 }
+      },
+      {
+        title: "Electrolysis Chamber",
+        body:
+          "The technology core where Laikfvea prepares hydrogen-rich water through a precise electrolysis cycle.",
+        marker: { x: 51, y: 71 },
+        label: { x: 61, y: 60 },
+        line: { width: 120, rotate: -22 }
+      },
+      {
+        title: "USB-C Charging",
+        body: "Modern USB-C charging for convenient use at home, work or while travelling.",
+        marker: { x: 55, y: 86 },
+        label: { x: 61, y: 82 },
+        line: { width: 96, rotate: -8 }
+      },
+      {
+        title: "Stable Base",
+        body: "A weighted foundation designed to keep the bottle secure during operation.",
+        marker: { x: 43, y: 91 },
+        label: { x: 14, y: 84 },
+        line: { width: 110, rotate: 18 }
+      }
+    ]
   },
   howItWorks: {
     heading: "One Button. Five Minutes.",
