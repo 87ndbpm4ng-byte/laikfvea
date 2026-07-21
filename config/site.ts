@@ -27,7 +27,7 @@ export const SITE_CONFIG = {
   },
   social: {
     instagram: "https://www.instagram.com/laikfvea",
-    pinterest: ""
+    pinterest: "https://pin.it/79txB88Xv"
   },
   app: {
     ios: "https://apps.apple.com/app/id6736646427",
