@@ -11,11 +11,22 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 type BottleFeature = (typeof homepageContent.bottleExplorer.details)[number];
 
 const highlightMap: Record<BottleFeature["highlightTarget"], { left: number; top: number; width: number; height: number }> = {
-  lid: { left: 50, top: 17, width: 76, height: 48 },
-  body: { left: 50, top: 45, width: 118, height: 176 },
-  chamber: { left: 50, top: 68, width: 106, height: 64 },
-  charging: { left: 55, top: 80, width: 68, height: 44 },
-  base: { left: 50, top: 91, width: 104, height: 34 }
+  lid: { left: 58, top: 17, width: 72, height: 44 },
+  body: { left: 58, top: 45, width: 112, height: 168 },
+  chamber: { left: 58, top: 68, width: 100, height: 60 },
+  charging: { left: 61, top: 81, width: 64, height: 42 },
+  base: { left: 58, top: 90, width: 100, height: 32 }
+};
+
+const connectorMap: Record<
+  BottleFeature["highlightTarget"],
+  { hotspotX: number; hotspotY: number; pillY: number }
+> = {
+  lid: { hotspotX: 58, hotspotY: 18, pillY: 20 },
+  body: { hotspotX: 58, hotspotY: 45, pillY: 34 },
+  chamber: { hotspotX: 58, hotspotY: 68, pillY: 48 },
+  charging: { hotspotX: 61, hotspotY: 81, pillY: 62 },
+  base: { hotspotX: 58, hotspotY: 90, pillY: 76 }
 };
 
 function FeatureCard({ feature }: { feature: BottleFeature }) {
@@ -38,18 +49,29 @@ function FeatureCard({ feature }: { feature: BottleFeature }) {
   );
 }
 
-function ProductStage({ feature }: { feature: BottleFeature }) {
+function ProductStage({
+  features,
+  activeIndex,
+  onSelect
+}: {
+  features: BottleFeature[];
+  activeIndex: number;
+  onSelect: (index: number) => void;
+}) {
   const reduceMotion = useReducedMotion();
+  const feature = features[activeIndex];
   const highlight = highlightMap[feature.highlightTarget];
+  const guideX = 66;
+  const pillX = 70;
 
   return (
     <div className="relative min-h-[540px] overflow-hidden rounded-[28px] bg-[#F6F7F6] sm:min-h-[680px] lg:min-h-[760px]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_41%,rgba(167,216,245,0.19),transparent_38%),radial-gradient(circle_at_50%_82%,rgba(255,255,255,0.92),transparent_40%)]" />
-      <div className="absolute bottom-[10%] left-1/2 h-14 w-[36%] -translate-x-1/2 rounded-full bg-ink/12 blur-2xl" />
-      <div className="absolute bottom-[13.5%] left-1/2 h-4 w-[20%] -translate-x-1/2 rounded-full bg-white/70 blur-md" />
+      <div className="absolute bottom-[10%] left-[36%] h-14 w-[34%] -translate-x-1/2 rounded-full bg-ink/12 blur-2xl" />
+      <div className="absolute bottom-[13.5%] left-[36%] h-4 w-[18%] -translate-x-1/2 rounded-full bg-white/70 blur-md" />
 
       <motion.div
-        className="absolute inset-y-[2%] left-[23%] w-[76%] max-w-[580px] -translate-x-1/2 sm:inset-y-[-1%] sm:left-[36%] sm:w-[62%] lg:left-[34%] lg:w-[64%]"
+        className="absolute inset-y-[4%] left-[19%] w-[76%] max-w-[620px] -translate-x-1/2 sm:inset-y-[1%] sm:left-[23%] sm:w-[68%] lg:left-[20%] lg:w-[66%]"
         animate={reduceMotion ? undefined : { y: [0, -7, 0], rotate: [0, 0.45, 0] }}
         transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -77,53 +99,99 @@ function ProductStage({ feature }: { feature: BottleFeature }) {
           className="scale-100"
         />
       </motion.div>
-    </div>
-  );
-}
 
-function CarouselNav({
-  current,
-  total,
-  onPrevious,
-  onNext,
-  onSelect
-}: {
-  current: number;
-  total: number;
-  onPrevious: () => void;
-  onNext: () => void;
-  onSelect: (index: number) => void;
-}) {
-  return (
-    <div className="mt-7 flex items-center justify-center gap-5">
-      <button
-        type="button"
-        onClick={onPrevious}
-        className="rounded-full border border-ink/[0.08] bg-white px-4 py-2 text-xs font-semibold text-ink transition duration-200 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-ink/18 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white"
-      >
-        Previous
-      </button>
-      <div className="flex items-center gap-2.5" aria-label="Feature selector">
-        {Array.from({ length: total }, (_, index) => (
-          <button
-            key={index}
-            type="button"
-            aria-label={`Show feature ${index + 1}`}
-            aria-current={current === index ? "true" : undefined}
-            onClick={() => onSelect(index)}
-            className={`h-2 rounded-full transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white ${
-              current === index ? "w-6 bg-[#111111] shadow-[0_6px_18px_rgba(28,28,28,0.16)]" : "w-2 bg-ink/16 hover:bg-ink/32"
-            }`}
-          />
-        ))}
+      <svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 z-20 hidden lg:block">
+        {features.map((item, index) => {
+          const point = connectorMap[item.highlightTarget];
+          const active = index === activeIndex;
+
+          return (
+            <motion.path
+              key={item.title}
+              d={`M ${point.hotspotX} ${point.hotspotY} H ${guideX} V ${point.pillY} H ${pillX}`}
+              fill="none"
+              stroke={active ? "rgba(28,28,28,0.42)" : "rgba(28,28,28,0.18)"}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1}
+              vectorEffect="non-scaling-stroke"
+              transition={{ duration: 0.2, ease: "easeOut" }}
+            />
+          );
+        })}
+      </svg>
+
+      <div className="absolute inset-0 z-30 hidden lg:block">
+        {features.map((item, index) => {
+          const point = connectorMap[item.highlightTarget];
+          const active = index === activeIndex;
+
+          return (
+            <button
+              key={item.title}
+              type="button"
+              aria-label={`Show ${item.title} detail`}
+              aria-current={active ? "true" : undefined}
+              onClick={() => onSelect(index)}
+              onMouseEnter={() => onSelect(index)}
+              className={`absolute h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[#F6F7F6] ${
+                active
+                  ? "border-ink/55 bg-ink shadow-[0_0_0_4px_rgba(28,28,28,0.08)]"
+                  : "border-ink/24 bg-white/80 hover:border-ink/40 hover:bg-white"
+              }`}
+              style={{ left: `${point.hotspotX}%`, top: `${point.hotspotY}%` }}
+            >
+              <span className="sr-only">{item.title}</span>
+            </button>
+          );
+        })}
       </div>
-      <button
-        type="button"
-        onClick={onNext}
-        className="rounded-full border border-ink/[0.08] bg-white px-4 py-2 text-xs font-semibold text-ink transition duration-200 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-ink/18 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white"
-      >
-        Next
-      </button>
+
+      <div className="absolute right-[5%] top-1/2 z-30 hidden w-[25%] -translate-y-1/2 flex-col gap-5 lg:flex">
+        {features.map((item, index) => {
+          const active = index === activeIndex;
+
+          return (
+            <button
+              key={item.title}
+              type="button"
+              aria-label={`Show ${item.title} detail`}
+              aria-current={active ? "true" : undefined}
+              onClick={() => onSelect(index)}
+              onMouseEnter={() => onSelect(index)}
+              className={`flex h-11 w-full items-center gap-3 rounded-full border bg-white/82 px-4 text-left text-[0.72rem] font-semibold text-ink/70 transition duration-200 hover:border-ink/22 hover:text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[#F6F7F6] ${
+                active
+                  ? "border-ink/34 text-ink shadow-[0_12px_28px_rgba(28,28,28,0.07)]"
+                  : "border-ink/[0.09]"
+              }`}
+            >
+              <span className={`h-1.5 w-1.5 rounded-full transition ${active ? "bg-ink" : "bg-ink/24"}`} />
+              <span className="whitespace-nowrap">{item.title}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="absolute inset-x-6 bottom-6 z-30 flex gap-2 overflow-x-auto pb-1 lg:hidden">
+        {features.map((item, index) => {
+          const active = index === activeIndex;
+
+          return (
+            <button
+              key={item.title}
+              type="button"
+              aria-label={`Show ${item.title} detail`}
+              aria-current={active ? "true" : undefined}
+              onClick={() => onSelect(index)}
+              className={`shrink-0 rounded-full border bg-white/86 px-4 py-2 text-[0.7rem] font-semibold transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[#F6F7F6] ${
+                active ? "border-ink/34 text-ink" : "border-ink/[0.09] text-ink/62"
+              }`}
+            >
+              {item.title}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -145,9 +213,6 @@ export function BottleExplorerSection() {
     return () => window.clearInterval(id);
   }, [features.length, paused]);
 
-  const goPrevious = () => setActiveIndex((index) => (index - 1 + features.length) % features.length);
-  const goNext = () => setActiveIndex((index) => (index + 1) % features.length);
-
   return (
     <MotionSection id="technology" className="bg-white px-6 py-28 sm:px-8 lg:px-10 lg:py-36">
       <div className="mx-auto max-w-7xl">
@@ -160,14 +225,7 @@ export function BottleExplorerSection() {
           </div>
 
           <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-            <ProductStage feature={activeFeature} />
-            <CarouselNav
-              current={activeIndex}
-              total={features.length}
-              onPrevious={goPrevious}
-              onNext={goNext}
-              onSelect={setActiveIndex}
-            />
+            <ProductStage features={features} activeIndex={activeIndex} onSelect={setActiveIndex} />
           </div>
         </div>
       </div>
