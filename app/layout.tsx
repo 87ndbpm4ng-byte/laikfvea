@@ -16,6 +16,10 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: SITE_CONFIG.title,
   description: SITE_CONFIG.description,
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png"
+  },
   openGraph: {
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
