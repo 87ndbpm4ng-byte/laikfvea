@@ -41,53 +41,14 @@ function StoreButton({
 
 function AppVisual() {
   return (
-    <div className="group relative min-h-[520px] overflow-hidden rounded-[24px] bg-white p-6 shadow-soft sm:p-8 lg:min-h-[620px]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_32%,rgba(167,216,245,0.28),transparent_38%),radial-gradient(circle_at_70%_72%,rgba(242,244,245,0.92),transparent_42%)]" />
-      <div className="absolute left-8 top-10 h-20 w-20 rounded-full border border-ink/8 bg-white/58 backdrop-blur-sm" />
-      <div className="absolute bottom-12 right-8 h-28 w-28 rounded-full border border-accent/35 bg-accent/10 blur-[1px]" />
-      <div className="relative mx-auto flex h-full max-w-[360px] items-center justify-center">
-        <div className="absolute bottom-7 left-1/2 h-12 w-3/4 -translate-x-1/2 rounded-full bg-ink/12 blur-2xl transition group-hover:bg-ink/16" />
-        <div className="relative aspect-[0.49] w-[70%] max-w-[250px] rounded-[38px] border border-ink/10 bg-ink p-2 shadow-[0_34px_90px_rgba(28,28,28,0.18)] transition duration-700 group-hover:-translate-y-1 group-hover:scale-[1.02] sm:w-[74%]">
-          <div className="h-full overflow-hidden rounded-[30px] bg-canvas">
-            <div className="mx-auto mt-3 h-1.5 w-16 rounded-full bg-ink/18" />
-            <div className="px-6 pb-7 pt-9">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">Laikfvea</p>
-              <h3 className="mt-5 text-3xl font-semibold leading-tight text-ink">Daily hydration</h3>
-              <div className="mt-8 rounded-[20px] bg-white p-5 shadow-[0_18px_44px_rgba(28,28,28,0.08)]">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Today</span>
-                  <span className="rounded-full bg-accent/20 px-3 py-1 text-xs font-semibold text-ink">PRO</span>
-                </div>
-                <div className="mt-6 h-2 rounded-full bg-panel">
-                  <div className="h-full w-3/4 rounded-full bg-ink" />
-                </div>
-                <p className="mt-5 text-sm leading-6 text-muted">Bottle active. Routine in progress.</p>
-              </div>
-              <div className="mt-5 grid grid-cols-2 gap-3">
-                {["Devices", "Support", "Cycle", "Guide"].map((item) => (
-                  <div key={item} className="rounded-[18px] bg-white/76 p-4 text-sm font-semibold text-ink shadow-[0_12px_30px_rgba(28,28,28,0.055)]">
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function SmartAppControlVisual() {
-  return (
-    <div className="mt-16 flex justify-center sm:mt-20 lg:mt-24">
+    <div className="flex items-center justify-center">
       <Image
         src="/app/smart-app-control.png"
-        alt="Smart app control features and mobile app download options for the Laikfvea hydrogen generator"
+        alt="Smart app control features and download options for the Laikfvea hydrogen generator"
         width={2000}
         height={2000}
-        sizes="(min-width: 1280px) 1120px, (min-width: 768px) 92vw, 100vw"
-        className="h-auto w-full max-w-6xl rounded-[24px] shadow-[0_22px_70px_rgba(28,28,28,0.055)]"
+        sizes="(min-width: 1280px) 620px, (min-width: 1024px) 52vw, 100vw"
+        className="h-auto w-full max-w-[680px]"
       />
     </div>
   );
@@ -131,8 +92,6 @@ export function AppSection() {
 
           <AppVisual />
         </div>
-
-        <SmartAppControlVisual />
       </div>
     </MotionSection>
   );
