@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SITE_CONFIG } from "@/config/site";
 import { homepageContent } from "@/content/homepage";
 import { MotionSection } from "@/components/ui/MotionSection";
@@ -77,42 +78,61 @@ function AppVisual() {
   );
 }
 
+function SmartAppControlVisual() {
+  return (
+    <div className="mt-16 flex justify-center sm:mt-20 lg:mt-24">
+      <Image
+        src="/app/smart-app-control.png"
+        alt="Smart app control features and mobile app download options for the Laikfvea hydrogen generator"
+        width={2000}
+        height={2000}
+        sizes="(min-width: 1280px) 1120px, (min-width: 768px) 92vw, 100vw"
+        className="h-auto w-full max-w-6xl rounded-[24px] shadow-[0_22px_70px_rgba(28,28,28,0.055)]"
+      />
+    </div>
+  );
+}
+
 export function AppSection() {
   const content = homepageContent.app;
 
   return (
     <MotionSection id="app" className="scroll-mt-28 px-6 py-24 sm:px-8 lg:px-10 lg:py-32">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <SectionHeading eyebrow={content.label} title={content.heading}>
-            <p>{content.body}</p>
-          </SectionHeading>
+      <div className="mx-auto max-w-7xl">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <SectionHeading eyebrow={content.label} title={content.heading}>
+              <p>{content.body}</p>
+            </SectionHeading>
 
-          <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:max-w-2xl">
-            {content.features.map((feature) => (
-              <li key={feature} className="rounded-brand border border-ink/8 bg-white px-5 py-4 text-sm font-medium text-ink shadow-[0_12px_32px_rgba(28,28,28,0.04)]">
-                {feature}
-              </li>
-            ))}
-          </ul>
+            <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:max-w-2xl">
+              {content.features.map((feature) => (
+                <li key={feature} className="rounded-brand border border-ink/8 bg-white px-5 py-4 text-sm font-medium text-ink shadow-[0_12px_32px_rgba(28,28,28,0.04)]">
+                  {feature}
+                </li>
+              ))}
+            </ul>
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 sm:items-stretch lg:max-w-xl">
-            <StoreButton
-              href={SITE_CONFIG.app.ios}
-              label={content.iosCta}
-              eyebrow="Download on"
-              ariaLabel="Download the Laikfvea app on the App Store"
-            />
-            <StoreButton
-              href={SITE_CONFIG.app.android}
-              label={content.androidCta}
-              eyebrow="Get it for"
-              ariaLabel="Download the Laikfvea app for Android"
-            />
+            <div className="mt-10 grid gap-3 sm:grid-cols-2 sm:items-stretch lg:max-w-xl">
+              <StoreButton
+                href={SITE_CONFIG.app.ios}
+                label={content.iosCta}
+                eyebrow="Download on"
+                ariaLabel="Download the Laikfvea app on the App Store"
+              />
+              <StoreButton
+                href={SITE_CONFIG.app.android}
+                label={content.androidCta}
+                eyebrow="Get it for"
+                ariaLabel="Download the Laikfvea app for Android"
+              />
+            </div>
           </div>
+
+          <AppVisual />
         </div>
 
-        <AppVisual />
+        <SmartAppControlVisual />
       </div>
     </MotionSection>
   );
