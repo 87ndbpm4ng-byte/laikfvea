@@ -8,27 +8,49 @@ export function DesignedAroundEverySipSection({ compact = false }: { compact?: b
     ? "Laikfvea combines advanced hydrogen water technology with premium craftsmanship, carefully considering every material, detail and interaction from the bottle body to the precision electrolysis system inside."
     : content.body.join(" ");
 
+  if (compact) {
+    return (
+      <MotionSection className="bg-[#F5F1EA] px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:gap-16">
+          <div className="max-w-[520px]">
+            <h2 className="text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl lg:text-6xl">
+              {content.heading}
+            </h2>
+            <p className="mt-8 text-base leading-8 text-muted sm:text-lg">{intro}</p>
+          </div>
+
+          <div className="flex justify-center lg:justify-end">
+            <Image
+              src="/technology/high-quality-components.png"
+              alt="High-quality components of the Laikfvea hydrogen water bottle, including the Tritan bottle body and proton-ion membrane assembly."
+              width={1280}
+              height={1280}
+              sizes="(min-width: 1280px) 720px, (min-width: 1024px) 58vw, 100vw"
+              className="h-auto w-full max-w-[740px]"
+            />
+          </div>
+        </div>
+      </MotionSection>
+    );
+  }
+
   return (
-    <MotionSection className={`bg-[#F5F1EA] px-6 sm:px-8 lg:px-10 ${compact ? "py-20 lg:py-24" : "py-28 lg:py-36"}`}>
+    <MotionSection className="bg-[#F5F1EA] px-6 py-28 sm:px-8 lg:px-10 lg:py-36">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-[700px] text-center">
           <h2 className="text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl lg:text-6xl">
             {content.heading}
           </h2>
-          <p className={`${compact ? "mt-10" : "mt-6"} text-base leading-8 text-muted sm:text-lg`}>{intro}</p>
+          <p className="mt-6 text-base leading-8 text-muted sm:text-lg">{intro}</p>
         </div>
-        <div className={`flex justify-center ${compact ? "mt-12" : "mt-16 sm:mt-20"}`}>
+        <div className="mt-16 flex justify-center sm:mt-20">
           <Image
             src="/technology/high-quality-components.png"
             alt="High-quality components of the Laikfvea hydrogen water bottle, including the Tritan bottle body and proton-ion membrane assembly."
             width={1280}
             height={1280}
-            sizes={
-              compact
-                ? "(min-width: 1280px) 960px, (min-width: 768px) 74vw, 100vw"
-                : "(min-width: 1280px) 1200px, (min-width: 768px) 92vw, 100vw"
-            }
-            className={`h-auto ${compact ? "w-full max-w-[960px] lg:w-3/4" : "w-full max-w-[1200px]"}`}
+            sizes="(min-width: 1280px) 1200px, (min-width: 768px) 92vw, 100vw"
+            className="h-auto w-full max-w-[1200px]"
           />
         </div>
       </div>
