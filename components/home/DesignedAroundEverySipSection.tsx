@@ -7,7 +7,7 @@ export function DesignedAroundEverySipSection() {
   const content = homepageContent.designed;
   const featureImages: Record<
     string,
-    { src: string; alt: string; width: number; height: number; className: string }
+    { src: string; alt: string; width: number; height: number; className: string; hasBackdrop?: boolean }
   > = {
     "SPE / PEM Technology": {
       src: "/technology/membrane-module.png",
@@ -17,11 +17,12 @@ export function DesignedAroundEverySipSection() {
       className: "w-full max-w-[180px]"
     },
     "Premium Materials": {
-      src: "/technology/premium-glass-bottle-card.png",
+      src: "/technology/premium-glass-bottle.png",
       alt: "Laikfvea premium glass bottle component",
       width: 598,
       height: 806,
-      className: "max-h-[220px] w-auto max-w-full"
+      className: "relative z-10 max-h-[220px] w-auto max-w-full",
+      hasBackdrop: true
     }
   };
 
@@ -48,6 +49,12 @@ export function DesignedAroundEverySipSection() {
                 <div className="mt-6 flex min-h-[190px] items-center justify-center">
                   {image ? (
                     <div className="relative flex items-center justify-center">
+                      {image.hasBackdrop ? (
+                        <div
+                          aria-hidden="true"
+                          className="absolute left-1/2 top-1/2 h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F8F8F7] blur-[1px]"
+                        />
+                      ) : null}
                       <Image
                         src={image.src}
                         alt={image.alt}
