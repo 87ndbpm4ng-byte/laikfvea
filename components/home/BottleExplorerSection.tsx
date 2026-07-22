@@ -11,28 +11,28 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 type BottleFeature = (typeof homepageContent.bottleExplorer.details)[number];
 
 const highlightMap: Record<BottleFeature["highlightTarget"], { left: number; top: number; width: number; height: number }> = {
-  lid: { left: 58, top: 17, width: 72, height: 44 },
-  body: { left: 58, top: 45, width: 112, height: 168 },
-  chamber: { left: 58, top: 68, width: 100, height: 60 },
-  charging: { left: 61, top: 81, width: 64, height: 42 },
-  base: { left: 58, top: 90, width: 100, height: 32 }
+  lid: { left: 47, top: 17, width: 72, height: 44 },
+  body: { left: 47, top: 45, width: 112, height: 168 },
+  chamber: { left: 47, top: 68, width: 100, height: 60 },
+  charging: { left: 50, top: 81, width: 64, height: 42 },
+  base: { left: 47, top: 90, width: 100, height: 32 }
 };
 
 const connectorMap: Record<
   BottleFeature["highlightTarget"],
   { hotspotX: number; hotspotY: number; pillY: number }
 > = {
-  lid: { hotspotX: 58, hotspotY: 18, pillY: 20 },
-  body: { hotspotX: 58, hotspotY: 45, pillY: 34 },
-  chamber: { hotspotX: 58, hotspotY: 68, pillY: 48 },
-  charging: { hotspotX: 61, hotspotY: 81, pillY: 62 },
-  base: { hotspotX: 58, hotspotY: 90, pillY: 76 }
+  lid: { hotspotX: 47, hotspotY: 18, pillY: 20 },
+  body: { hotspotX: 47, hotspotY: 45, pillY: 34 },
+  chamber: { hotspotX: 47, hotspotY: 68, pillY: 48 },
+  charging: { hotspotX: 50, hotspotY: 81, pillY: 62 },
+  base: { hotspotX: 47, hotspotY: 90, pillY: 76 }
 };
 
 function FeatureCard({ feature }: { feature: BottleFeature }) {
   return (
-    <div className="mt-12 max-w-[410px] rounded-[18px] border border-ink/[0.07] bg-panel/75 p-7 shadow-[0_18px_45px_rgba(28,28,28,0.045)] sm:p-8">
-      <p className="text-[0.64rem] font-medium uppercase tracking-[0.22em] text-muted/75">Feature</p>
+    <div className="mt-12 max-w-[410px] rounded-[18px] border border-ink/[0.07] bg-panel/75 p-8 shadow-[0_18px_45px_rgba(28,28,28,0.045)] sm:p-9">
+      <p className="text-[0.58rem] font-medium uppercase tracking-[0.24em] text-muted/75">Feature</p>
       <AnimatePresence mode="wait">
         <motion.div
           key={feature.title}
@@ -41,8 +41,8 @@ function FeatureCard({ feature }: { feature: BottleFeature }) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.24, ease: "easeOut" }}
         >
-          <h3 className="mt-5 text-[1.45rem] font-semibold leading-tight text-ink sm:text-[1.65rem]">{feature.title}</h3>
-          <p className="mt-4 text-sm leading-[1.85] text-muted sm:text-[0.95rem]">{feature.body}</p>
+          <h3 className="mt-6 text-[1.45rem] font-semibold leading-tight text-ink sm:text-[1.65rem]">{feature.title}</h3>
+          <p className="mt-5 text-sm leading-[1.85] text-muted sm:text-[0.95rem]">{feature.body}</p>
         </motion.div>
       </AnimatePresence>
     </div>
@@ -61,17 +61,17 @@ function ProductStage({
   const reduceMotion = useReducedMotion();
   const feature = features[activeIndex];
   const highlight = highlightMap[feature.highlightTarget];
-  const guideX = 66;
-  const pillX = 70;
+  const guideX = 62;
+  const pillX = 66;
 
   return (
     <div className="relative min-h-[540px] overflow-hidden rounded-[28px] bg-[#F6F7F6] sm:min-h-[680px] lg:min-h-[760px]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_41%,rgba(167,216,245,0.19),transparent_38%),radial-gradient(circle_at_50%_82%,rgba(255,255,255,0.92),transparent_40%)]" />
-      <div className="absolute bottom-[10%] left-[36%] h-14 w-[34%] -translate-x-1/2 rounded-full bg-ink/12 blur-2xl" />
-      <div className="absolute bottom-[13.5%] left-[36%] h-4 w-[18%] -translate-x-1/2 rounded-full bg-white/70 blur-md" />
+      <div className="absolute bottom-[10%] left-[28%] h-14 w-[34%] -translate-x-1/2 rounded-full bg-ink/12 blur-2xl" />
+      <div className="absolute bottom-[13.5%] left-[28%] h-4 w-[18%] -translate-x-1/2 rounded-full bg-white/70 blur-md" />
 
       <motion.div
-        className="absolute inset-y-[4%] left-[19%] w-[76%] max-w-[620px] -translate-x-1/2 sm:inset-y-[1%] sm:left-[23%] sm:w-[68%] lg:left-[20%] lg:w-[66%]"
+        className="absolute inset-y-[4%] left-[17%] w-[78%] max-w-[650px] -translate-x-1/2 sm:inset-y-[1%] sm:left-[19%] sm:w-[71%] lg:left-[12%] lg:w-[69%]"
         animate={reduceMotion ? undefined : { y: [0, -7, 0], rotate: [0, 0.45, 0] }}
         transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -119,6 +119,21 @@ function ProductStage({
             />
           );
         })}
+        {features.map((item, index) => {
+          const point = connectorMap[item.highlightTarget];
+          const active = index === activeIndex;
+
+          return (
+            <motion.circle
+              key={`${item.title}-endpoint`}
+              cx={pillX}
+              cy={point.pillY}
+              r={0.38}
+              fill={active ? "rgba(28,28,28,0.38)" : "rgba(28,28,28,0.18)"}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+            />
+          );
+        })}
       </svg>
 
       <div className="absolute inset-0 z-30 hidden lg:block">
@@ -136,7 +151,7 @@ function ProductStage({
               onMouseEnter={() => onSelect(index)}
               className={`absolute h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[#F6F7F6] ${
                 active
-                  ? "border-ink/55 bg-ink shadow-[0_0_0_4px_rgba(28,28,28,0.08)]"
+                  ? "border-ink/55 bg-ink shadow-[0_0_0_3px_rgba(28,28,28,0.075)]"
                   : "border-ink/24 bg-white/80 hover:border-ink/40 hover:bg-white"
               }`}
               style={{ left: `${point.hotspotX}%`, top: `${point.hotspotY}%` }}
@@ -147,7 +162,7 @@ function ProductStage({
         })}
       </div>
 
-      <div className="absolute right-[5%] top-1/2 z-30 hidden w-[25%] -translate-y-1/2 flex-col gap-5 lg:flex">
+      <div className="absolute right-[9%] top-1/2 z-30 hidden w-[25%] -translate-y-1/2 flex-col gap-5 lg:flex">
         {features.map((item, index) => {
           const active = index === activeIndex;
 
