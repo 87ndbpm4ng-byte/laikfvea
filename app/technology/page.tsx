@@ -13,7 +13,7 @@ export default function TechnologyPage() {
   return (
     <>
       <TechnologyHero />
-      <DesignedAroundEverySipSection />
+      <DesignedAroundEverySipSection compact />
       <BottleExplorerSection />
     </>
   );
