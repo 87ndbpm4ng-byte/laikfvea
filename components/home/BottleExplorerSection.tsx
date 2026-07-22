@@ -18,17 +18,6 @@ const highlightMap: Record<BottleFeature["highlightTarget"], { left: number; top
   base: { left: 47, top: 90, width: 100, height: 32 }
 };
 
-const connectorMap: Record<
-  BottleFeature["highlightTarget"],
-  { hotspotX: number; hotspotY: number; pillY: number }
-> = {
-  lid: { hotspotX: 47, hotspotY: 18, pillY: 20 },
-  body: { hotspotX: 47, hotspotY: 45, pillY: 34 },
-  chamber: { hotspotX: 47, hotspotY: 68, pillY: 48 },
-  charging: { hotspotX: 50, hotspotY: 81, pillY: 62 },
-  base: { hotspotX: 47, hotspotY: 90, pillY: 76 }
-};
-
 function FeatureCard({ feature }: { feature: BottleFeature }) {
   return (
     <div className="mt-12 max-w-[410px] rounded-[18px] border border-ink/[0.07] bg-panel/75 p-8 shadow-[0_18px_45px_rgba(28,28,28,0.045)] sm:p-9">
@@ -61,8 +50,6 @@ function ProductStage({
   const reduceMotion = useReducedMotion();
   const feature = features[activeIndex];
   const highlight = highlightMap[feature.highlightTarget];
-  const guideX = 62;
-  const pillX = 66;
 
   return (
     <div className="relative min-h-[540px] overflow-hidden rounded-[28px] bg-[#F6F7F6] sm:min-h-[680px] lg:min-h-[760px]">
@@ -100,68 +87,6 @@ function ProductStage({
         />
       </motion.div>
 
-      <svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none" className="pointer-events-none absolute inset-0 z-20 hidden lg:block">
-        {features.map((item, index) => {
-          const point = connectorMap[item.highlightTarget];
-          const active = index === activeIndex;
-
-          return (
-            <motion.path
-              key={item.title}
-              d={`M ${point.hotspotX} ${point.hotspotY} H ${guideX} V ${point.pillY} H ${pillX}`}
-              fill="none"
-              stroke={active ? "rgba(28,28,28,0.42)" : "rgba(28,28,28,0.18)"}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1}
-              vectorEffect="non-scaling-stroke"
-              transition={{ duration: 0.2, ease: "easeOut" }}
-            />
-          );
-        })}
-        {features.map((item, index) => {
-          const point = connectorMap[item.highlightTarget];
-          const active = index === activeIndex;
-
-          return (
-            <motion.circle
-              key={`${item.title}-endpoint`}
-              cx={pillX}
-              cy={point.pillY}
-              r={0.38}
-              fill={active ? "rgba(28,28,28,0.38)" : "rgba(28,28,28,0.18)"}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-            />
-          );
-        })}
-      </svg>
-
-      <div className="absolute inset-0 z-30 hidden lg:block">
-        {features.map((item, index) => {
-          const point = connectorMap[item.highlightTarget];
-          const active = index === activeIndex;
-
-          return (
-            <button
-              key={item.title}
-              type="button"
-              aria-label={`Show ${item.title} detail`}
-              aria-current={active ? "true" : undefined}
-              onClick={() => onSelect(index)}
-              onMouseEnter={() => onSelect(index)}
-              className={`absolute h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[#F6F7F6] ${
-                active
-                  ? "border-ink/55 bg-ink shadow-[0_0_0_3px_rgba(28,28,28,0.075)]"
-                  : "border-ink/24 bg-white/80 hover:border-ink/40 hover:bg-white"
-              }`}
-              style={{ left: `${point.hotspotX}%`, top: `${point.hotspotY}%` }}
-            >
-              <span className="sr-only">{item.title}</span>
-            </button>
-          );
-        })}
-      </div>
-
       <div className="absolute right-[9%] top-1/2 z-30 hidden w-[25%] -translate-y-1/2 flex-col gap-5 lg:flex">
         {features.map((item, index) => {
           const active = index === activeIndex;
@@ -174,20 +99,20 @@ function ProductStage({
               aria-current={active ? "true" : undefined}
               onClick={() => onSelect(index)}
               onMouseEnter={() => onSelect(index)}
-              className={`flex h-11 w-full items-center gap-3 rounded-full border bg-white/82 px-4 text-left text-[0.72rem] font-semibold text-ink/70 transition duration-200 hover:border-ink/22 hover:text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[#F6F7F6] ${
+              className={`flex h-11 w-full items-center gap-3 rounded-full border bg-white/82 px-4 text-left text-[0.72rem] font-semibold text-ink/70 transition duration-300 hover:border-ink/22 hover:text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[#F6F7F6] ${
                 active
-                  ? "border-ink/34 text-ink shadow-[0_12px_28px_rgba(28,28,28,0.07)]"
+                  ? "border-ink/34 text-ink shadow-[0_12px_28px_rgba(28,28,28,0.055)]"
                   : "border-ink/[0.09]"
               }`}
             >
-              <span className={`h-1.5 w-1.5 rounded-full transition ${active ? "bg-ink" : "bg-ink/24"}`} />
+              <span className={`h-1.5 w-1.5 rounded-full transition duration-300 ${active ? "bg-ink" : "bg-ink/24"}`} />
               <span className="whitespace-nowrap">{item.title}</span>
             </button>
           );
         })}
       </div>
 
-      <div className="absolute inset-x-6 bottom-6 z-30 flex gap-2 overflow-x-auto pb-1 lg:hidden">
+      <div className="absolute inset-x-6 bottom-6 z-30 flex flex-col gap-2 lg:hidden">
         {features.map((item, index) => {
           const active = index === activeIndex;
 
@@ -198,11 +123,12 @@ function ProductStage({
               aria-label={`Show ${item.title} detail`}
               aria-current={active ? "true" : undefined}
               onClick={() => onSelect(index)}
-              className={`shrink-0 rounded-full border bg-white/86 px-4 py-2 text-[0.7rem] font-semibold transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[#F6F7F6] ${
+              className={`flex h-10 w-full items-center gap-3 rounded-full border bg-white/86 px-4 text-left text-[0.7rem] font-semibold transition duration-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[#F6F7F6] ${
                 active ? "border-ink/34 text-ink" : "border-ink/[0.09] text-ink/62"
               }`}
             >
-              {item.title}
+              <span className={`h-1.5 w-1.5 rounded-full transition duration-300 ${active ? "bg-ink" : "bg-ink/24"}`} />
+              <span>{item.title}</span>
             </button>
           );
         })}
