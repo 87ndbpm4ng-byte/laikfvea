@@ -8,8 +8,8 @@ export function TechnologyOverviewSection() {
     "Laikfvea combines advanced hydrogen water technology with premium craftsmanship, carefully considering every material, detail and interaction from the bottle body to the precision electrolysis system inside.";
 
   return (
-    <MotionSection className="bg-[#F5F1EA] px-6 py-20 sm:px-8 md:min-h-[650px] lg:min-h-[700px] lg:px-10 lg:py-24">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-[0.4fr_0.6fr] lg:gap-16">
+    <MotionSection className="bg-[#F5F1EA] px-6 py-20 sm:px-8 md:py-0 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-12 md:h-[700px] md:grid-cols-[minmax(0,40%)_minmax(0,60%)] md:items-center lg:gap-16">
         <div className="max-w-[500px]">
           <h2 className="text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl lg:text-6xl">
             {content.heading}
