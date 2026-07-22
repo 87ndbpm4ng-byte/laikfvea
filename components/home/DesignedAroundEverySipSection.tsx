@@ -21,7 +21,7 @@ export function DesignedAroundEverySipSection() {
       alt: "Laikfvea premium glass bottle component",
       width: 598,
       height: 806,
-      className: "max-h-[160px] w-auto max-w-full"
+      className: "max-h-[170px] w-auto max-w-full"
     }
   };
 
@@ -45,7 +45,7 @@ export function DesignedAroundEverySipSection() {
                   <h3 className="text-lg font-semibold text-ink">{feature.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-muted">{feature.body}</p>
                 </div>
-                <div className="mt-5 flex min-h-[180px] items-center justify-center">
+                <div className="mt-6 flex min-h-[190px] items-center justify-center">
                   {image ? (
                     <Image
                       src={image.src}
