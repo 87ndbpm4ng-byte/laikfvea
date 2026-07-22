@@ -9,6 +9,13 @@ export function DesignedAroundEverySipSection() {
     string,
     { src: string; alt: string; width: number; height: number; className: string; hasBackdrop?: boolean }
   > = {
+    "Mineralization for Alkaline Water": {
+      src: "/technology/mineralization-cartridge.png",
+      alt: "Laikfvea mineralization cartridge",
+      width: 1600,
+      height: 1600,
+      className: "w-full max-w-[185px]"
+    },
     "SPE / PEM Technology": {
       src: "/technology/membrane-module.png",
       alt: "Laikfvea SPE PEM membrane module",

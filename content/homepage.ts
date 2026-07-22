@@ -90,8 +90,9 @@ export const homepageContent = {
     ],
     features: [
       {
-        title: "Five-Minute Cycle",
-        body: "Transform ordinary drinking water into hydrogen-rich water in a single cycle."
+        title: "Mineralization for Alkaline Water",
+        body:
+          "Shungite, Zeolite, Silicon (Flint), Silver and Magnesium work together to naturally enrich water with beneficial minerals for a cleaner, smoother and more balanced drinking experience."
       },
       {
         title: "SPE / PEM Technology",
