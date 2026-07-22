@@ -1,8 +1,7 @@
-import { products } from "@/config/products";
+import Image from "next/image";
 import { homepageContent } from "@/content/homepage";
 import { AmazonButton, SecondaryButton } from "@/components/ui/Button";
 import { MotionSection } from "@/components/ui/MotionSection";
-import { ProductStage } from "@/components/ui/ProductImage";
 
 export function FinalCTASection() {
   const content = homepageContent.finalCta;
@@ -20,12 +19,16 @@ export function FinalCTASection() {
             <SecondaryButton href={content.secondaryHref}>{content.secondaryCta}</SecondaryButton>
           </div>
         </div>
-        <ProductStage
-          src={products.pro.image}
-          alt={products.pro.alt}
-          className="min-h-[460px]"
-          imageClassName="scale-[1.18]"
-        />
+        <div className="flex min-h-[460px] items-center justify-center">
+          <Image
+            src="/images/bottles-comparison.png"
+            alt="Laikfvea GO and PRO hydrogen water bottles"
+            width={3240}
+            height={4050}
+            sizes="(min-width: 1024px) 520px, 100vw"
+            className="h-auto w-full max-w-[520px] object-contain"
+          />
+        </div>
       </div>
     </MotionSection>
   );
