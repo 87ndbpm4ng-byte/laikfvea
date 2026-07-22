@@ -14,14 +14,14 @@ export function DesignedAroundEverySipSection() {
       alt: "Laikfvea SPE PEM membrane module",
       width: 544,
       height: 642,
-      className: "w-[130px] max-w-[130px]"
+      className: "w-full max-w-[180px]"
     },
     "Premium Materials": {
       src: "/technology/premium-glass-bottle.png",
       alt: "Laikfvea premium glass bottle component",
       width: 598,
       height: 806,
-      className: "w-[110px] max-w-[110px]"
+      className: "max-h-[160px] w-auto max-w-full"
     }
   };
 
@@ -40,19 +40,19 @@ export function DesignedAroundEverySipSection() {
             const image = featureImages[feature.title];
 
             return (
-              <article key={feature.title} className="flex h-full flex-col rounded-brand bg-white p-7 shadow-soft">
+              <article key={feature.title} className="flex h-full flex-col rounded-brand bg-white p-8 shadow-soft">
                 <div>
                   <h3 className="text-lg font-semibold text-ink">{feature.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-muted">{feature.body}</p>
                 </div>
-                <div className="mt-5 flex min-h-[155px] items-end justify-center">
+                <div className="mt-5 flex min-h-[180px] items-center justify-center">
                   {image ? (
                     <Image
                       src={image.src}
                       alt={image.alt}
                       width={image.width}
                       height={image.height}
-                      sizes="140px"
+                      sizes="180px"
                       className={`h-auto object-contain ${image.className}`}
                     />
                   ) : null}
