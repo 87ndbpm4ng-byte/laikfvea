@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { homepageContent } from "@/content/homepage";
-import { FeatureCard } from "@/components/ui/FeatureCard";
 import { MotionSection } from "@/components/ui/MotionSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -7,7 +7,7 @@ export function DesignedAroundEverySipSection() {
   const content = homepageContent.designed;
 
   return (
-    <MotionSection className="px-6 py-28 sm:px-8 lg:px-10 lg:py-36">
+    <MotionSection className="bg-[#F5F1EA] px-6 py-28 sm:px-8 lg:px-10 lg:py-36">
       <div className="mx-auto max-w-7xl">
         <SectionHeading title={content.heading} center>
           {content.body.map((paragraph) => (
@@ -16,10 +16,15 @@ export function DesignedAroundEverySipSection() {
             </p>
           ))}
         </SectionHeading>
-        <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {content.features.map((feature) => (
-            <FeatureCard key={feature.title} title={feature.title} body={feature.body} />
-          ))}
+        <div className="mt-16 flex justify-center sm:mt-20">
+          <Image
+            src="/technology/high-quality-components.png"
+            alt="High-quality components of the Laikfvea hydrogen water bottle, including the Tritan bottle body and proton-ion membrane assembly."
+            width={1280}
+            height={1280}
+            sizes="(min-width: 1280px) 1200px, (min-width: 768px) 92vw, 100vw"
+            className="h-auto w-full max-w-[1200px]"
+          />
         </div>
       </div>
     </MotionSection>
