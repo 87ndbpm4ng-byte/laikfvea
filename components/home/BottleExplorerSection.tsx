@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { products } from "@/config/products";
 import { homepageContent } from "@/content/homepage";
 import { MotionSection } from "@/components/ui/MotionSection";
 import { ProductImage } from "@/components/ui/ProductImage";
@@ -79,7 +78,7 @@ function ProductStage({
           />
         </AnimatePresence>
         <ProductImage
-          src={products.pro.image}
+          src="/technology/bottle-active.png"
           alt="Laikfvea PRO bottle detail showcase"
           priority
           sizes="(min-width: 1024px) 38vw, 86vw"
