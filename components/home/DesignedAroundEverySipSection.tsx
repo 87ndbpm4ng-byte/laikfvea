@@ -1,10 +1,29 @@
+import Image from "next/image";
 import { homepageContent } from "@/content/homepage";
-import { FeatureCard } from "@/components/ui/FeatureCard";
 import { MotionSection } from "@/components/ui/MotionSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function DesignedAroundEverySipSection() {
   const content = homepageContent.designed;
+  const featureImages: Record<
+    string,
+    { src: string; alt: string; width: number; height: number; className: string }
+  > = {
+    "SPE / PEM Technology": {
+      src: "/technology/membrane-module.png",
+      alt: "Laikfvea SPE PEM membrane module",
+      width: 544,
+      height: 642,
+      className: "w-[130px] max-w-[130px]"
+    },
+    "Premium Materials": {
+      src: "/technology/premium-glass-bottle.png",
+      alt: "Laikfvea premium glass bottle component",
+      width: 598,
+      height: 806,
+      className: "w-[110px] max-w-[110px]"
+    }
+  };
 
   return (
     <MotionSection className="bg-white px-6 py-28 sm:px-8 lg:px-10 lg:py-36">
@@ -17,9 +36,30 @@ export function DesignedAroundEverySipSection() {
           ))}
         </SectionHeading>
         <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {content.features.map((feature) => (
-            <FeatureCard key={feature.title} title={feature.title} body={feature.body} />
-          ))}
+          {content.features.map((feature) => {
+            const image = featureImages[feature.title];
+
+            return (
+              <article key={feature.title} className="flex h-full flex-col rounded-brand bg-white p-7 shadow-soft">
+                <div>
+                  <h3 className="text-lg font-semibold text-ink">{feature.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-muted">{feature.body}</p>
+                </div>
+                <div className="mt-5 flex min-h-[155px] items-end justify-center">
+                  {image ? (
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={image.width}
+                      height={image.height}
+                      sizes="140px"
+                      className={`h-auto object-contain ${image.className}`}
+                    />
+                  ) : null}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </MotionSection>
