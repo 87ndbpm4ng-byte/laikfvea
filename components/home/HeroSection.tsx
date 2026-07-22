@@ -43,61 +43,63 @@ function HeroProduct() {
       <div className="absolute inset-x-6 bottom-10 top-8 rounded-full bg-accent/14 blur-3xl" />
       <div className="absolute inset-x-12 top-1/4 h-1/2 rounded-full bg-panel/70 blur-3xl" />
 
-      <motion.a
-        href="/#go"
-        aria-label="Explore Laikfvea GO"
-        className="group absolute bottom-[8%] left-[3%] h-[58%] w-[43%] min-w-[160px] outline-none sm:bottom-[9%] sm:left-[5%] sm:h-[60%] lg:bottom-[8%] lg:left-[4%] lg:h-[62%]"
-        style={{ x: reduceMotion ? 0 : goX, y: reduceMotion ? 0 : goY }}
-      >
-        <motion.div
-          className="relative h-full w-full"
-          animate={reduceMotion ? undefined : { y: [0, -10, 0], rotate: [-0.8, 0.8, -0.8] }}
-          transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut" }}
+      <div className="relative z-10 grid h-full grid-cols-2 items-end gap-3 md:block">
+        <motion.a
+          href="/#go"
+          aria-label="Explore Laikfvea GO"
+          className="group relative flex min-w-0 flex-col items-center outline-none md:absolute md:bottom-[9%] md:left-[5%] md:h-[60%] md:w-[43%] md:min-w-[160px] lg:bottom-[8%] lg:left-[4%] lg:h-[62%]"
+          style={{ x: reduceMotion ? 0 : goX, y: reduceMotion ? 0 : goY }}
         >
-          <div className="absolute bottom-2 left-1/2 h-12 w-3/4 -translate-x-1/2 rounded-full bg-ink/12 blur-2xl transition group-hover:bg-ink/16" />
-          <div className="absolute -left-1 top-[18%] z-10 rounded-brand bg-white/78 px-4 py-3 shadow-[0_14px_40px_rgba(28,28,28,0.07)] backdrop-blur-md transition group-hover:-translate-y-0.5 sm:left-1">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink/70 transition group-hover:text-ink">GO</p>
-            <p className="mt-1 whitespace-nowrap text-xs font-medium text-muted">Compact Everyday Bottle</p>
-          </div>
-          <div className="relative h-full w-full transition duration-500 group-hover:scale-[1.03]">
-            <ProductImage
-              src={products.go.image}
-              alt={products.go.alt}
-              priority
-              sizes="(min-width: 1024px) 26vw, 44vw"
-              className="object-contain"
-            />
-          </div>
-        </motion.div>
-      </motion.a>
+          <motion.div
+            className="flex h-full w-full flex-col items-center md:relative md:block"
+            animate={reduceMotion ? undefined : { y: [0, -10, 0], rotate: [-0.8, 0.8, -0.8] }}
+            transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <div className="relative flex h-[300px] w-full items-end justify-center transition duration-500 group-hover:scale-[1.03] sm:h-[390px] md:h-full md:block">
+              <div className="absolute bottom-2 left-1/2 h-12 w-3/4 -translate-x-1/2 rounded-full bg-ink/12 blur-2xl transition group-hover:bg-ink/16" />
+              <ProductImage
+                src={products.go.image}
+                alt={products.go.alt}
+                priority
+                sizes="(min-width: 1024px) 26vw, 44vw"
+                className="object-contain"
+              />
+            </div>
+            <div className="mt-3 min-h-[82px] w-[calc(100%-8px)] max-w-[165px] rounded-brand bg-white/78 px-3 py-3.5 text-left shadow-[0_14px_40px_rgba(28,28,28,0.07)] backdrop-blur-md transition group-hover:-translate-y-0.5 md:absolute md:left-1 md:top-[18%] md:z-10 md:mt-0 md:w-auto md:max-w-none md:px-4 md:py-3 lg:-left-1">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink/70 transition group-hover:text-ink">GO</p>
+              <p className="mt-1 text-xs font-medium text-muted md:whitespace-nowrap">Compact Everyday Bottle</p>
+            </div>
+          </motion.div>
+        </motion.a>
 
-      <motion.a
-        href="/#pro"
-        aria-label="Explore Laikfvea PRO"
-        className="group absolute bottom-[4%] right-[-1%] z-20 h-[76%] w-[58%] min-w-[210px] outline-none sm:bottom-[3%] sm:right-[1%] sm:h-[78%] lg:bottom-[3%] lg:right-[2%] lg:h-[80%]"
-        style={{ x: reduceMotion ? 0 : proX, y: reduceMotion ? 0 : proY }}
-      >
-        <motion.div
-          className="relative h-full w-full"
-          animate={reduceMotion ? undefined : { y: [0, -13, 0], rotate: [0.8, -0.6, 0.8] }}
-          transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut" }}
+        <motion.a
+          href="/#pro"
+          aria-label="Explore Laikfvea PRO"
+          className="group relative z-20 flex min-w-0 flex-col items-center outline-none md:absolute md:bottom-[3%] md:right-[1%] md:h-[78%] md:w-[58%] md:min-w-[210px] lg:right-[2%] lg:h-[80%]"
+          style={{ x: reduceMotion ? 0 : proX, y: reduceMotion ? 0 : proY }}
         >
-          <div className="absolute bottom-0 left-1/2 h-16 w-4/5 -translate-x-1/2 rounded-full bg-ink/14 blur-2xl transition group-hover:bg-ink/18" />
-          <div className="absolute right-0 top-[12%] z-10 rounded-brand bg-white/82 px-4 py-3 shadow-[0_14px_40px_rgba(28,28,28,0.075)] backdrop-blur-md transition group-hover:-translate-y-0.5 sm:right-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink/72 transition group-hover:text-ink">PRO</p>
-            <p className="mt-1 whitespace-nowrap text-xs font-medium text-muted">Hydrogen + Inhalation</p>
-          </div>
-          <div className="relative h-full w-full transition duration-500 group-hover:scale-[1.03]">
-            <ProductImage
-              src={products.pro.image}
-              alt={products.pro.alt}
-              priority
-              sizes="(min-width: 1024px) 34vw, 56vw"
-              className="object-contain"
-            />
-          </div>
-        </motion.div>
-      </motion.a>
+          <motion.div
+            className="flex h-full w-full flex-col items-center md:relative md:block"
+            animate={reduceMotion ? undefined : { y: [0, -13, 0], rotate: [0.8, -0.6, 0.8] }}
+            transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <div className="relative flex h-[300px] w-full items-end justify-center transition duration-500 group-hover:scale-[1.03] sm:h-[390px] md:h-full md:block">
+              <div className="absolute bottom-0 left-1/2 h-16 w-4/5 -translate-x-1/2 rounded-full bg-ink/14 blur-2xl transition group-hover:bg-ink/18" />
+              <ProductImage
+                src={products.pro.image}
+                alt={products.pro.alt}
+                priority
+                sizes="(min-width: 1024px) 34vw, 56vw"
+                className="object-contain"
+              />
+            </div>
+            <div className="mt-3 min-h-[82px] w-[calc(100%-8px)] max-w-[165px] rounded-brand bg-white/82 px-3 py-3.5 text-left shadow-[0_14px_40px_rgba(28,28,28,0.075)] backdrop-blur-md transition group-hover:-translate-y-0.5 md:absolute md:right-3 md:top-[12%] md:z-10 md:mt-0 md:w-auto md:max-w-none md:px-4 md:py-3 lg:right-0">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink/72 transition group-hover:text-ink">PRO</p>
+              <p className="mt-1 text-xs font-medium text-muted md:whitespace-nowrap">Hydrogen + Inhalation</p>
+            </div>
+          </motion.div>
+        </motion.a>
+      </div>
     </motion.div>
   );
 }
