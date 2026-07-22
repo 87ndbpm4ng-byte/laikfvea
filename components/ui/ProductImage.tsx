@@ -42,7 +42,7 @@ export function ProductStage({
   priority?: boolean;
 }) {
   return (
-    <div className={`relative overflow-visible rounded-brand ${className}`}>
+    <div className={`relative overflow-hidden rounded-brand ${className}`}>
       <div className="absolute inset-x-8 bottom-12 top-12 rounded-[48px] bg-accent/10 blur-3xl" />
       <div className="absolute bottom-10 left-1/2 h-14 w-3/5 -translate-x-1/2 rounded-full bg-ink/10 blur-2xl" />
       <ProductImage
