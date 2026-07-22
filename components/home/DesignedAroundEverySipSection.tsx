@@ -2,37 +2,9 @@ import Image from "next/image";
 import { homepageContent } from "@/content/homepage";
 import { MotionSection } from "@/components/ui/MotionSection";
 
-export function DesignedAroundEverySipSection({ compact = false }: { compact?: boolean }) {
+export function DesignedAroundEverySipSection() {
   const content = homepageContent.designed;
-  const intro = compact
-    ? "Laikfvea combines advanced hydrogen water technology with premium craftsmanship, carefully considering every material, detail and interaction from the bottle body to the precision electrolysis system inside."
-    : content.body.join(" ");
-
-  if (compact) {
-    return (
-      <MotionSection className="bg-[#F5F1EA] px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:gap-16">
-          <div className="max-w-[520px]">
-            <h2 className="text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl lg:text-6xl">
-              {content.heading}
-            </h2>
-            <p className="mt-8 text-base leading-8 text-muted sm:text-lg">{intro}</p>
-          </div>
-
-          <div className="flex justify-center lg:justify-end">
-            <Image
-              src="/technology/high-quality-components.png"
-              alt="High-quality components of the Laikfvea hydrogen water bottle, including the Tritan bottle body and proton-ion membrane assembly."
-              width={1280}
-              height={1280}
-              sizes="(min-width: 1280px) 720px, (min-width: 1024px) 58vw, 100vw"
-              className="h-auto w-full max-w-[740px]"
-            />
-          </div>
-        </div>
-      </MotionSection>
-    );
-  }
+  const intro = content.body.join(" ");
 
   return (
     <MotionSection className="bg-[#F5F1EA] px-6 py-28 sm:px-8 lg:px-10 lg:py-36">

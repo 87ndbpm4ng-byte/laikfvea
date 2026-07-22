@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { BottleExplorerSection } from "@/components/home/BottleExplorerSection";
-import { DesignedAroundEverySipSection } from "@/components/home/DesignedAroundEverySipSection";
 import { TechnologyHero } from "@/components/technology/TechnologyHero";
+import { TechnologyOverviewSection } from "@/components/technology/TechnologyOverviewSection";
 
 export const metadata: Metadata = {
   title: "Technology | Laikfvea",
@@ -13,7 +13,7 @@ export default function TechnologyPage() {
   return (
     <>
       <TechnologyHero />
-      <DesignedAroundEverySipSection compact />
+      <TechnologyOverviewSection />
       <BottleExplorerSection />
     </>
   );
