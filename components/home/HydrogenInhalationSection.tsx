@@ -1,9 +1,8 @@
+import Image from "next/image";
 import { links } from "@/config/links";
-import { products } from "@/config/products";
 import { homepageContent } from "@/content/homepage";
 import { ArrowButton } from "@/components/ui/Button";
 import { MotionSection } from "@/components/ui/MotionSection";
-import { ProductStage } from "@/components/ui/ProductImage";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function HydrogenInhalationSection() {
@@ -12,12 +11,17 @@ export function HydrogenInhalationSection() {
   return (
     <MotionSection id="pro-inhalation" className="bg-panel px-6 py-28 sm:px-8 lg:px-10 lg:py-36">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <ProductStage
-          src={products.pro.image}
-          alt="Laikfvea PRO hydrogen inhalation system"
-          className="min-h-[560px]"
-          imageClassName="scale-[1.12]"
-        />
+        <div className="flex min-h-[560px] items-center justify-center">
+          <Image
+            src="/hydrogen/inhalation-lifestyle.png"
+            alt="Woman using the Laikfvea PRO hydrogen inhalation accessory"
+            width={1086}
+            height={1448}
+            sizes="(min-width: 1024px) 560px, 100vw"
+            className="object-contain"
+            style={{ width: "100%", maxWidth: 560, height: "auto", filter: "saturate(0.95) brightness(1.01)" }}
+          />
+        </div>
         <div>
           <SectionHeading eyebrow={content.label} title={content.heading}>
             {content.intro.map((paragraph) => (
