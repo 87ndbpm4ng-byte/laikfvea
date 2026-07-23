@@ -10,11 +10,11 @@ export function DesignedAroundEverySipSection() {
     { src: string; alt: string; width: number; height: number; className: string }
   > = {
     "Mineralization for Alkaline Water": {
-      src: "/technology/mineralization-cartridge.png",
-      alt: "Laikfvea mineralization cartridge",
-      width: 1600,
-      height: 1600,
-      className: "w-full max-w-[185px] contrast-[1.12] brightness-[1.03] saturate-[1.02]"
+      src: "/technology/mineralization-media.jpg",
+      alt: "Laikfvea alkaline mineralization media",
+      width: 1320,
+      height: 2297,
+      className: "mx-auto block w-[88%] max-w-[300px] contrast-[1.06]"
     },
     "SPE / PEM Technology": {
       src: "/technology/membrane-module.png",
