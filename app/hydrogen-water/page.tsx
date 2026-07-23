@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { HydrogenWaterFAQ } from "@/components/hydrogen-water/HydrogenWaterFAQ";
-import { HydrogenWaterHero } from "@/components/hydrogen-water/HydrogenWaterHero";
 import { WhatIsHydrogenWater } from "@/components/hydrogen-water/WhatIsHydrogenWater";
 import { WhyPeopleChooseIt } from "@/components/hydrogen-water/WhyPeopleChooseIt";
 
@@ -13,7 +12,6 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <HydrogenWaterHero />
       <WhatIsHydrogenWater />
       <WhyPeopleChooseIt />
       <HydrogenWaterFAQ />
