@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { hydrogenWaterContent } from "@/content/hydrogen-water";
 import { MotionSection } from "@/components/ui/MotionSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -19,13 +18,10 @@ export function WhatIsHydrogenWater() {
           </SectionHeading>
         </div>
         <div className="mx-auto mt-16">
-          <Image
-            src="/hydrogen/hydrogen-infographic.png"
+          <img
+            src="/hydrogen/hydrogen-infographic.svg"
             alt="Educational infographic explaining hydrogen water and molecular hydrogen"
-            width={1774}
-            height={887}
-            sizes="(min-width: 1440px) 1400px, 100vw"
-            className="h-auto w-full object-contain"
+            className="mx-auto block h-auto w-full max-w-[1200px]"
           />
         </div>
       </div>
