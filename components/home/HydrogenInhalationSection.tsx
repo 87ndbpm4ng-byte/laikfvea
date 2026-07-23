@@ -11,7 +11,17 @@ export function HydrogenInhalationSection() {
   return (
     <MotionSection id="pro-inhalation" className="bg-panel px-6 py-28 sm:px-8 lg:px-10 lg:py-36">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <div className="flex min-h-[560px] items-center justify-center">
+        <div
+          className="flex min-h-[560px] items-center justify-center"
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, transparent 0%, black 9%, black 91%, transparent 100%), linear-gradient(to right, transparent 0%, black 11%)",
+            maskComposite: "intersect",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent 0%, black 9%, black 91%, transparent 100%), linear-gradient(to right, transparent 0%, black 11%)",
+            WebkitMaskComposite: "source-in"
+          }}
+        >
           <Image
             src="/hydrogen/inhalation-lifestyle.png"
             alt="Woman using the Laikfvea PRO hydrogen inhalation accessory"
