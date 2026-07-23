@@ -48,7 +48,7 @@ export function ProductCard({
             </li>
           ))}
         </ul>
-        <div className="mt-9">
+        <div className="mt-auto pt-9">
           <ArrowButton href={href}>{cta}</ArrowButton>
         </div>
       </div>
