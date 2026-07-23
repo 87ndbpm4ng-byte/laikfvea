@@ -21,14 +21,14 @@ export function DesignedAroundEverySipSection() {
       alt: "Laikfvea SPE PEM membrane module",
       width: 544,
       height: 642,
-      className: "w-full max-w-[180px]"
+      className: "w-full max-w-[245px]"
     },
     "Premium Materials": {
       src: "/technology/premium-glass-bottle.png",
       alt: "Laikfvea premium glass bottle component",
-      width: 598,
-      height: 806,
-      className: "relative z-10 max-h-[220px] w-auto max-w-full",
+      width: 1254,
+      height: 1254,
+      className: "relative z-10 max-h-[340px] w-auto max-w-full",
       hasBackdrop: true
     }
   };
@@ -48,18 +48,18 @@ export function DesignedAroundEverySipSection() {
             const image = featureImages[feature.title];
 
             return (
-              <article key={feature.title} className="flex h-full flex-col rounded-brand bg-white p-8 shadow-soft">
-                <div>
+              <article key={feature.title} className="flex h-full min-h-[560px] flex-col rounded-brand bg-white p-8 shadow-soft">
+                <div className="min-h-[190px]">
                   <h3 className="text-lg font-semibold text-ink">{feature.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-muted">{feature.body}</p>
                 </div>
-                <div className="mt-6 flex min-h-[190px] items-center justify-center">
+                <div className="mt-auto flex min-h-[270px] items-center justify-center pt-8">
                   {image ? (
-                    <div className="relative flex items-center justify-center">
+                    <div className="relative flex w-full items-center justify-center">
                       {image.hasBackdrop ? (
                         <div
                           aria-hidden="true"
-                          className="absolute left-1/2 top-1/2 h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F8F8F7] blur-[1px]"
+                          className="absolute left-1/2 top-1/2 h-[210px] w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F8F8F7] blur-[1px]"
                         />
                       ) : null}
                       <Image
