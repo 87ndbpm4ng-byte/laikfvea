@@ -11,6 +11,8 @@ export function MobileMenu({ open, onNavigate }: { open: boolean; onNavigate: ()
           <a
             key={item.label}
             href={item.href}
+            target={item.external ? "_blank" : undefined}
+            rel={item.external ? "noopener noreferrer" : undefined}
             className="rounded-brand px-2 py-4 text-lg font-medium text-ink focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white"
             onClick={onNavigate}
           >
