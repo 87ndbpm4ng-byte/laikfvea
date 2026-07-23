@@ -47,7 +47,9 @@ export function BuiltForEveryDaySection() {
                       alt={`${feature.title.toLowerCase()} lifestyle`}
                       fill
                       sizes="(min-width: 1024px) 60vw, 100vw"
-                      className="object-contain object-center transition duration-700 group-hover:scale-[1.02]"
+                      className={`object-center transition duration-700 group-hover:scale-[1.02] ${
+                        feature.title === "WORK" ? "object-cover saturate-95" : "object-contain"
+                      }`}
                     />
                   </div>
                 </div>

@@ -71,7 +71,7 @@ export const homepageContent = {
         title: "WORK",
         body:
           "Stay refreshed throughout busy workdays with clean, hydrogen-rich water always within reach.",
-        image: "/lifestyle/lifestyle-placeholder.svg"
+        image: "/lifestyle/work.png"
       }
     ]
   },
