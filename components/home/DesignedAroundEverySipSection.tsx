@@ -28,7 +28,7 @@ export function DesignedAroundEverySipSection() {
       alt: "Laikfvea premium glass bottle component",
       width: 1254,
       height: 1254,
-      className: "mx-auto block w-full max-w-[330px]"
+      className: "mx-auto block w-[90%] max-w-none"
     }
   };
 
