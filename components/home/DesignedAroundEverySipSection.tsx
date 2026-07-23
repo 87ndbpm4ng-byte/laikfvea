@@ -7,7 +7,7 @@ export function DesignedAroundEverySipSection() {
   const content = homepageContent.designed;
   const featureImages: Record<
     string,
-    { src: string; alt: string; width: number; height: number; className: string; hasBackdrop?: boolean }
+    { src: string; alt: string; width: number; height: number; className: string }
   > = {
     "Mineralization for Alkaline Water": {
       src: "/technology/mineralization-cartridge.png",
@@ -28,8 +28,7 @@ export function DesignedAroundEverySipSection() {
       alt: "Laikfvea premium glass bottle component",
       width: 1254,
       height: 1254,
-      className: "relative z-10 max-h-[340px] w-auto max-w-full",
-      hasBackdrop: true
+      className: "mx-auto block w-[82%] max-w-[260px]"
     }
   };
 
@@ -56,12 +55,6 @@ export function DesignedAroundEverySipSection() {
                 <div className="mt-auto flex min-h-[270px] items-center justify-center pt-8">
                   {image ? (
                     <div className="relative flex w-full items-center justify-center">
-                      {image.hasBackdrop ? (
-                        <div
-                          aria-hidden="true"
-                          className="absolute left-1/2 top-1/2 h-[210px] w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F8F8F7] blur-[1px]"
-                        />
-                      ) : null}
                       <Image
                         src={image.src}
                         alt={image.alt}
