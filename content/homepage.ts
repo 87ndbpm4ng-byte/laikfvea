@@ -14,8 +14,8 @@ export const homepageContent = {
     heading: "Choose Your Bottle.",
     body:
       "Two hydrogen water systems designed for different routines — from effortless everyday hydration to advanced performance and expanded functionality.",
-    goCta: "Explore GO",
-    proCta: "Explore PRO"
+    goCta: "View User Manual",
+    proCta: "View User Manual"
   },
   inhalation: {
     label: "PRO EXCLUSIVE",

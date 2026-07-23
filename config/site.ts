@@ -19,7 +19,9 @@ export const SITE_CONFIG = {
     about: "/#about",
     aboutPage: "/about",
     support: "/#support",
-    supportPage: "/support"
+    supportPage: "/support",
+    goManual: "/support/go-manual",
+    proManual: "/support/pro-manual"
   },
   amazon: {
     go: "https://www.amazon.com/LAIKFVEA-Hydrogen-Water-Bottle-Leak-Resistant/dp/B0G39DP3NK/ref=sr_1_1?crid=393PUHPYAVJXJ&dib=eyJ2IjoiMSJ9.Z8sqXUyTTbv6fTUD1jMdvkmrQgS5BVhV_2ecU8Lacno.65nbugW5W7bTHNaUzTkgZ9vzuwukomqMqEV-Mh-8T3Q&dib_tag=se&keywords=laikfvea&qid=1773919440&sprefix=laikfve%2Caps%2C280&sr=8-1",
