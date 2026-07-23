@@ -24,6 +24,7 @@ export function BuiltForEveryDaySection() {
         <div className="mt-20 grid gap-10 lg:gap-12">
           {content.features.map((feature, index) => {
             const imageFirst = index !== 1;
+            const isWork = feature.title === "WORK";
 
             return (
               <motion.article
@@ -41,14 +42,18 @@ export function BuiltForEveryDaySection() {
                   }`}
                 >
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.82),rgba(242,244,245,0.48))]" />
-                  <div className="absolute inset-5 overflow-hidden rounded-[18px] sm:inset-7">
+                  <div
+                    className={`absolute inset-5 flex items-center justify-center overflow-hidden rounded-[18px] sm:inset-7 ${
+                      isWork ? "bg-[#333336] p-6" : ""
+                    }`}
+                  >
                     <Image
                       src={feature.image}
                       alt={`${feature.title.toLowerCase()} lifestyle`}
                       fill
                       sizes="(min-width: 1024px) 60vw, 100vw"
                       className={`object-center transition duration-700 group-hover:scale-[1.02] ${
-                        feature.title === "WORK" ? "object-cover saturate-95" : "object-contain"
+                        isWork ? "object-contain saturate-95" : "object-contain"
                       }`}
                     />
                   </div>
