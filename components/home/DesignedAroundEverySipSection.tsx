@@ -14,7 +14,7 @@ export function DesignedAroundEverySipSection() {
       alt: "Laikfvea mineralization cartridge",
       width: 1600,
       height: 1600,
-      className: "w-full max-w-[185px]"
+      className: "w-full max-w-[185px] contrast-[1.12] brightness-[1.03] saturate-[1.02]"
     },
     "SPE / PEM Technology": {
       src: "/technology/membrane-module.png",
@@ -28,7 +28,7 @@ export function DesignedAroundEverySipSection() {
       alt: "Laikfvea premium glass bottle component",
       width: 1254,
       height: 1254,
-      className: "mx-auto block w-[82%] max-w-[260px]"
+      className: "mx-auto block w-full max-w-[330px]"
     }
   };
 
