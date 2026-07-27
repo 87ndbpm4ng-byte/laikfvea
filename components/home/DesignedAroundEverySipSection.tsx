@@ -14,28 +14,28 @@ export function DesignedAroundEverySipSection() {
       alt: "Laikfvea alkaline mineralization media",
       width: 1320,
       height: 2297,
-      className: "mx-auto block w-[88%] max-w-[300px] contrast-[1.06]"
+      className: "mx-auto block w-[96%] max-w-[340px] contrast-[1.06]"
     },
     "SPE / PEM Technology": {
       src: "/technology/membrane-module.png",
       alt: "Laikfvea SPE PEM membrane module",
       width: 544,
       height: 642,
-      className: "w-full max-w-[245px]"
+      className: "w-[112%] max-w-[310px]"
     },
     "Premium Materials": {
       src: "/technology/premium-glass-bottle.png",
       alt: "Laikfvea premium glass bottle component",
       width: 1254,
       height: 1254,
-      className: "mx-auto block w-[90%] max-w-none"
+      className: "mx-auto block w-[128%] max-w-none"
     },
     "Hydrogen Inhalation": {
       src: "/technology/inhalation-tubes.png",
       alt: "Transparent inhalation tubes for the Laikfvea PRO hydrogen inhalation function",
       width: 1672,
       height: 941,
-      className: "mx-auto block w-[85%] max-w-[280px]"
+      className: "mx-auto block w-[112%] max-w-[360px]"
     }
   };
 
@@ -54,14 +54,14 @@ export function DesignedAroundEverySipSection() {
             const image = featureImages[feature.title];
 
             return (
-              <article key={feature.title} className="flex h-full min-h-[560px] flex-col rounded-brand bg-white p-8 shadow-soft">
-                <div className="min-h-[190px]">
+              <article key={feature.title} className="flex h-full min-h-[510px] flex-col rounded-brand bg-white p-7 shadow-soft xl:p-8">
+                <div className="min-h-[230px]">
                   <h3 className="text-lg font-semibold text-ink">{feature.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-muted">{feature.body}</p>
                 </div>
-                <div className="mt-auto flex min-h-[270px] items-center justify-center pt-8">
+                <div className="mt-auto flex min-h-[220px] items-center justify-center pt-5">
                   {image ? (
-                    <div className="relative flex w-full items-center justify-center">
+                    <div className="relative flex w-full items-center justify-center overflow-visible">
                       <Image
                         src={image.src}
                         alt={image.alt}
