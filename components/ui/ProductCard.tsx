@@ -9,6 +9,7 @@ export function ProductCard({
   copy,
   cta,
   href,
+  amazonHref,
   points
 }: {
   name: string;
@@ -18,6 +19,7 @@ export function ProductCard({
   copy: string;
   cta: string;
   href: string;
+  amazonHref: string;
   points: string[];
 }) {
   return (
@@ -48,7 +50,16 @@ export function ProductCard({
             </li>
           ))}
         </ul>
-        <div className="mt-auto pt-9">
+        <div className="mt-auto flex flex-col items-start gap-3 pt-9">
+          <a
+            href={amazonHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Buy Laikfvea ${name} on Amazon`}
+            className="inline-flex min-h-12 items-center justify-center rounded-brand bg-[#111111] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#252525] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white sm:text-base"
+          >
+            Buy on Amazon
+          </a>
           <ArrowButton href={href}>{cta}</ArrowButton>
         </div>
       </div>

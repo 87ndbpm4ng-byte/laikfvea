@@ -103,8 +103,9 @@ export const homepageContent = {
         body: "Crafted with refined materials designed for everyday use."
       },
       {
-        title: "USB-C Rechargeable",
-        body: "Simple charging for home, work, travel and daily routines."
+        title: "Hydrogen Inhalation",
+        body:
+          "The PRO system includes a dedicated inhalation function, allowing molecular hydrogen to be delivered through transparent tubing as part of a broader wellness routine."
       }
     ]
   },

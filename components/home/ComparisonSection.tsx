@@ -23,6 +23,7 @@ export function ComparisonSection() {
             copy={products.go.description}
             cta={content.goCta}
             href={links.goManual}
+            amazonHref={links.amazonGo}
             points={products.go.specs}
           />
           <ProductCard
@@ -33,6 +34,7 @@ export function ComparisonSection() {
             copy={products.pro.description}
             cta={content.proCta}
             href={links.proManual}
+            amazonHref={links.amazonPro}
             points={products.pro.specs}
           />
         </div>

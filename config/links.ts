@@ -4,5 +4,6 @@ export const AMAZON_GO_URL = SITE_CONFIG.amazon.go;
 
 export const links = {
   ...SITE_CONFIG.routes,
-  amazonGo: AMAZON_GO_URL
+  amazonGo: SITE_CONFIG.amazon.go,
+  amazonPro: SITE_CONFIG.amazon.pro
 };

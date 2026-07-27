@@ -47,7 +47,7 @@ function HeroProduct() {
         <motion.a
           href="/#go"
           aria-label="Explore Laikfvea GO"
-          className="group relative flex min-w-0 flex-col items-center outline-none md:absolute md:bottom-[9%] md:left-[5%] md:h-[60%] md:w-[43%] md:min-w-[160px] lg:bottom-[8%] lg:left-[4%] lg:h-[62%]"
+          className="group relative flex min-w-0 flex-col items-center outline-none md:absolute md:bottom-[3%] md:left-[2%] md:h-[78%] md:w-[52%] md:min-w-[190px] lg:left-[1%] lg:h-[80%]"
           style={{ x: reduceMotion ? 0 : goX, y: reduceMotion ? 0 : goY }}
         >
           <motion.div
@@ -61,7 +61,7 @@ function HeroProduct() {
                 src={products.go.image}
                 alt={products.go.alt}
                 priority
-                sizes="(min-width: 1024px) 26vw, 44vw"
+                sizes="(min-width: 1024px) 32vw, 50vw"
                 className="object-contain"
               />
             </div>

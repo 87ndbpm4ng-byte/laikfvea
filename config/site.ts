@@ -1,3 +1,9 @@
+export const GO_AMAZON_URL =
+  "https://www.amazon.com/LAIKFVEA-Hydrogen-Water-Bottle-Leak-Resistant/dp/B0G39DP3NK/ref=sr_1_1?crid=393PUHPYAVJXJ&dib=eyJ2IjoiMSJ9.Z8sqXUyTTbv6fTUD1jMdvkmrQgS5BVhV_2ecU8Lacno.65nbugW5W7bTHNaUzTkgZ9vzuwukomqMqEV-Mh-8T3Q&dib_tag=se&keywords=laikfvea&qid=1773919440&sprefix=laikfve%2Caps%2C280&sr=8-1";
+
+export const PRO_AMAZON_URL =
+  "https://www.amazon.com/Hydrogen-Water-Bottle-Generator-Leak-Resistant/dp/B0G3993KY8/ref=sr_1_2?crid=393PUHPYAVJXJ&dib=eyJ2IjoiMSJ9.Z8sqXUyTTbv6fTUD1jMdvkmrQgS5BVhV_2ecU8Lacno.65nbugW5W7bTHNaUzTkgZ9vzuwukomqMqEV-Mh-8T3Q&dib_tag=se&keywords=laikfvea&qid=1773919440&sprefix=laikfve%2Caps%2C280&sr=8-2";
+
 export const SITE_CONFIG = {
   name: "Laikfvea",
   title: "Laikfvea | Hydration, Reinvented",
@@ -24,8 +30,8 @@ export const SITE_CONFIG = {
     proManual: "/support/pro-manual"
   },
   amazon: {
-    go: "https://www.amazon.com/LAIKFVEA-Hydrogen-Water-Bottle-Leak-Resistant/dp/B0G39DP3NK/ref=sr_1_1?crid=393PUHPYAVJXJ&dib=eyJ2IjoiMSJ9.Z8sqXUyTTbv6fTUD1jMdvkmrQgS5BVhV_2ecU8Lacno.65nbugW5W7bTHNaUzTkgZ9vzuwukomqMqEV-Mh-8T3Q&dib_tag=se&keywords=laikfvea&qid=1773919440&sprefix=laikfve%2Caps%2C280&sr=8-1",
-    pro: "https://www.amazon.com/Hydrogen-Water-Bottle-Generator-Leak-Resistant/dp/B0G3993KY8/ref=sr_1_2?crid=393PUHPYAVJXJ&dib=eyJ2IjoiMSJ9.Z8sqXUyTTbv6fTUD1jMdvkmrQgS5BVhV_2ecU8Lacno.65nbugW5W7bTHNaUzTkgZ9vzuwukomqMqEV-Mh-8T3Q&dib_tag=se&keywords=laikfvea&qid=1773919440&sprefix=laikfve%2Caps%2C280&sr=8-2"
+    go: GO_AMAZON_URL,
+    pro: PRO_AMAZON_URL
   },
   social: {
     instagram: "https://www.instagram.com/laikfvea",
