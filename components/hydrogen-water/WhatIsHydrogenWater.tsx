@@ -21,7 +21,12 @@ export function WhatIsHydrogenWater() {
           <img
             src="/hydrogen/hydrogen-infographic.svg"
             alt="Educational infographic explaining hydrogen water and molecular hydrogen"
-            className="mx-auto block h-auto w-full max-w-[1200px]"
+            className="mx-auto hidden h-auto w-full max-w-[1200px] md:block"
+          />
+          <img
+            src="/hydrogen/hydrogen-infographic-mobile.svg"
+            alt="Mobile educational infographic explaining hydrogen water and molecular hydrogen"
+            className="mx-auto block h-auto w-full md:hidden"
           />
         </div>
         <section className="pt-28 sm:pt-32" aria-labelledby="oxidative-stress-heading">
