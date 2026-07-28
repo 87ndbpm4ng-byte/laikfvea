@@ -40,7 +40,12 @@ export function WhatIsHydrogenWater() {
             <img
               src="/hydrogen/oxidative-stress-infographic.svg"
               alt="Educational infographic explaining oxidative stress, free radicals and antioxidant balance"
-              className="mx-auto block h-auto w-full max-w-[1200px]"
+              className="mx-auto hidden h-auto w-full max-w-[1200px] md:block"
+            />
+            <img
+              src="/hydrogen/oxidative-stress-infographic-mobile.svg"
+              alt="Mobile educational infographic explaining oxidative stress, free radicals and antioxidant balance"
+              className="mx-auto block h-auto w-full md:hidden"
             />
           </div>
         </section>
