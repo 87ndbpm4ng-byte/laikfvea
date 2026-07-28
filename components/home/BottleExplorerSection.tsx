@@ -37,22 +37,60 @@ function FeatureCard({ feature }: { feature: BottleFeature }) {
   );
 }
 
-function MobileFeatureInfo({ feature }: { feature: BottleFeature }) {
+function MobileFeatureAccordion({
+  features,
+  activeIndex,
+  onSelect
+}: {
+  features: BottleFeature[];
+  activeIndex: number;
+  onSelect: (index: number) => void;
+}) {
   return (
-    <div className="mt-5 rounded-[18px] border border-ink/[0.07] bg-white/78 p-5">
-      <p className="text-[0.58rem] font-medium uppercase tracking-[0.24em] text-muted/75">Feature</p>
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={feature.title}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.24, ease: "easeOut" }}
-        >
-          <h3 className="mt-4 text-xl font-semibold leading-tight text-ink">{feature.title}</h3>
-          <p className="mt-3 text-sm leading-[1.75] text-muted">{feature.body}</p>
-        </motion.div>
-      </AnimatePresence>
+    <div className="relative z-20 mt-6 grid w-full grid-cols-1 gap-4 md:hidden">
+      {features.map((item, index) => {
+        const active = index === activeIndex;
+
+        return (
+          <div key={item.title} className="w-full">
+            <button
+              type="button"
+              aria-label={`Show ${item.title} detail`}
+              aria-expanded={active}
+              aria-controls={`mobile-bottle-feature-${index}`}
+              onClick={() => onSelect(index)}
+              className={`box-border flex min-h-16 w-full items-center justify-between gap-4 rounded-[18px] border bg-white px-5 py-4 text-left text-sm font-semibold text-ink transition duration-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[#F6F7F6] ${
+                active ? "border-ink/24 bg-[#F4F7F8]" : "border-ink/[0.09]"
+              }`}
+            >
+              <span className="flex min-w-0 items-center gap-3">
+                <span
+                  className={`h-1.5 w-1.5 shrink-0 rounded-full transition duration-300 ${
+                    active ? "bg-accent" : "bg-ink/24"
+                  }`}
+                />
+                <span className="min-w-0">{item.title}</span>
+              </span>
+              <span className="shrink-0 text-xl font-normal leading-none text-muted" aria-hidden="true">
+                {active ? "−" : "+"}
+              </span>
+            </button>
+            <div
+              id={`mobile-bottle-feature-${index}`}
+              className={`grid transition-[grid-template-rows] duration-300 ${
+                active ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+              }`}
+            >
+              <div className="overflow-hidden">
+                <div className="mt-3 rounded-[18px] border border-ink/[0.07] bg-white/78 p-6">
+                  <h3 className="text-lg font-semibold leading-tight text-ink">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-[1.75] text-muted">{item.body}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -153,31 +191,7 @@ function ProductStage({
         })}
       </div>
 
-      <div className="relative z-20 mt-7 grid w-full grid-cols-1 gap-2.5 md:hidden">
-        {features.map((item, index) => {
-          const active = index === activeIndex;
-
-          return (
-            <button
-              key={item.title}
-              type="button"
-              aria-label={`Show ${item.title} detail`}
-              aria-current={active ? "true" : undefined}
-              onClick={() => onSelect(index)}
-              className={`box-border flex min-h-11 w-full items-center gap-3 rounded-full border bg-white px-4 py-3 text-left text-sm font-semibold text-ink transition duration-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[#F6F7F6] ${
-                active ? "border-ink/24 bg-[#F4F7F8]" : "border-ink/[0.09]"
-              }`}
-            >
-              <span className={`h-1.5 w-1.5 shrink-0 rounded-full transition duration-300 ${active ? "bg-accent" : "bg-ink/24"}`} />
-              <span className="min-w-0">{item.title}</span>
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="relative z-20 md:hidden">
-        <MobileFeatureInfo feature={feature} />
-      </div>
+      <MobileFeatureAccordion features={features} activeIndex={activeIndex} onSelect={onSelect} />
     </div>
   );
 }
