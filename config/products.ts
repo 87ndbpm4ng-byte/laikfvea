@@ -34,7 +34,7 @@ export const products = {
       "3-minute and 18-minute enrichment modes",
       "Bluetooth app control",
       "Hydrogen inhalation",
-      "Mineralization option",
+      "Mineralization option for alkaline water",
       "USB-C charging",
       "Tritan™ plastic body"
     ]
