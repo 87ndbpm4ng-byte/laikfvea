@@ -138,9 +138,9 @@ export const homepageContent = {
     ]
   },
   howItWorks: {
-    heading: "One Button. Five Minutes.",
+    heading: "Hydrogen Water in Four Simple Steps.",
     body:
-      "Creating hydrogen-rich water should feel effortless. Fill your bottle with drinking water, press once, and let Laikfvea prepare fresh hydrogen-rich water while you get on with your day.",
+      "Fill your bottle with drinking water, start the cycle and let the Laikfvea hydrogen water generator prepare fresh hydrogen-rich water in minutes.",
     steps: [
       ["01", "Prepare", "Fill the bottle with clean drinking water."],
       ["02", "Start", "Press the button on GO, or select the 3- or 18-minute mode on PRO."],
