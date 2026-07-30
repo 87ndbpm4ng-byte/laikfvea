@@ -68,8 +68,9 @@ export function AppSection() {
 
             <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:max-w-2xl">
               {content.features.map((feature) => (
-                <li key={feature} className="rounded-brand border border-ink/8 bg-white px-5 py-4 text-sm font-medium text-ink shadow-[0_12px_32px_rgba(28,28,28,0.04)]">
-                  {feature}
+                <li key={feature.title} className="rounded-brand border border-ink/8 bg-white px-5 py-4 text-sm text-ink shadow-[0_12px_32px_rgba(28,28,28,0.04)]">
+                  <h3 className="font-semibold">{feature.title}</h3>
+                  <p className="mt-2 leading-6 text-muted">{feature.body}</p>
                 </li>
               ))}
             </ul>

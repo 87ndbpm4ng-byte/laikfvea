@@ -2,9 +2,9 @@ import { links } from "@/config/links";
 
 export const homepageContent = {
   hero: {
-    heading: "Hydration, Reinvented.",
+    heading: "Hydrogen Technology. Made Portable.",
     body:
-      "Beautifully engineered hydrogen water technology designed to elevate one of life's most essential daily habits.",
+      "Generate fresh, hydrogen-rich water in minutes with advanced SPE/PEM electrolysis technology.",
     primaryCta: "Buy on Amazon",
     secondaryCta: "Explore Technology",
     secondaryHref: links.technology
@@ -18,35 +18,30 @@ export const homepageContent = {
     proCta: "View User Manual"
   },
   inhalation: {
-    label: "PRO EXCLUSIVE",
-    heading: "More Than Hydration.",
+    label: "LAIKFVEA HYDROGEN WATER BOTTLE PRO",
+    heading: "Hydrogen Inhalation. Now Portable.",
     intro: [
-      "The Laikfvea PRO also offers hydrogen inhalation — a direct way to introduce molecular hydrogen through the respiratory system.",
-      "When inhaled, hydrogen passes through the lungs and enters the bloodstream, making it rapidly available throughout the body."
+      "The Laikfvea Hydrogen water bottle PRO goes beyond hydrogen water. With the included inhalation adapter and dedicated 18-minute mode, it transforms into a portable hydrogen inhalation system.",
+      "Simply connect the tube, start the cycle and breathe normally—at home, at work or while travelling."
     ],
-    subheading: "Why Hydrogen Inhalation?",
-    body: [
-      "Molecular hydrogen is known for its selective antioxidant properties, helping address harmful free radicals while preserving essential cellular processes.",
-      "Designed to complement modern wellness routines, hydrogen inhalation offers another way to support recovery, manage oxidative stress and maintain everyday balance."
-    ],
+    subheading: "Hydrogen Inhalation, Simplified.",
+    body: [],
     benefits: [
       {
-        title: "Rapid Availability",
-        body: "Hydrogen enters through the lungs and becomes quickly available throughout the body."
+        title: "Dedicated Inhalation Mode",
+        body: "An extended 18-minute cycle designed for continuous hydrogen generation."
       },
       {
-        title: "Selective Antioxidant Support",
-        body:
-          "Molecular hydrogen is recognised for interacting selectively with harmful free radicals while supporting normal cellular function."
+        title: "Everything Included",
+        body: "The inhalation adapter and tube are included with the PRO."
       },
       {
-        title: "Recovery Support",
-        body:
-          "Designed to complement active lifestyles, demanding schedules and post-exercise recovery routines."
+        title: "Portable Alternative",
+        body: "Experience hydrogen inhalation without a large stationary machine."
       },
       {
-        title: "Everyday Balance",
-        body: "A simple inhalation function integrated into the PRO system for modern daily wellness."
+        title: "Two Functions. One Device.",
+        body: "Generate hydrogen-rich water or switch to hydrogen inhalation as part of your daily wellness routine."
       }
     ]
   },
@@ -85,27 +80,27 @@ export const homepageContent = {
   designed: {
     heading: "Designed Around Every Sip.",
     body: [
-      "Laikfvea combines advanced hydrogen water technology with premium craftsmanship to create a beautifully engineered hydration experience.",
-      "Every material, every detail and every interaction has been carefully considered, from the bottle body to the precision electrolysis system inside."
+      "Laikfvea hydrogen water bottles combine advanced hydrogen technology with thoughtful design for everyday use.",
+      "From the bottle materials to the precision electrolysis system inside, every detail is engineered to make hydrogen-rich water simple, portable and convenient."
     ],
     features: [
       {
         title: "Mineralization for Alkaline Water",
         body:
-          "Shungite, Zeolite, Silicon (Flint), Silver and Magnesium work together to naturally enrich water with beneficial minerals for a cleaner, smoother and more balanced drinking experience."
+          "Available with the PRO model, shungite, silicon, zeolite and magnesium enrich water with minerals and support alkaline water preparation."
       },
       {
         title: "SPE / PEM Technology",
-        body: "Engineered to support clean, consistent hydrogen generation."
+        body: "Advanced membrane electrolysis supports clean and consistent hydrogen generation across both Laikfvea bottles."
       },
       {
         title: "Premium Materials",
-        body: "Crafted with refined materials designed for everyday use."
+        body: "The PRO combines Tritan™ with an aluminum alloy housing, while the GO features borosilicate glass with BPA-free PC/ABS components."
       },
       {
-        title: "Hydrogen Inhalation",
+        title: "Hydrogen Inhalation with PRO",
         body:
-          "The PRO system includes a dedicated inhalation function, allowing molecular hydrogen to be delivered through transparent tubing as part of a broader wellness routine."
+          "The PRO includes a dedicated inhalation adapter and tube, allowing the device to be used for hydrogen inhalation in its 18-minute mode."
       }
     ]
   },
@@ -116,7 +111,8 @@ export const homepageContent = {
     details: [
       {
         title: "Drinking Lid",
-        body: "Designed for comfortable everyday drinking and easy cleaning.",
+        heading: "Integrated Supplement Storage",
+        body: "The PRO lid features a built-in compartment for carrying daily vitamins and supplements wherever you go",
         highlightTarget: "lid"
       },
       {
@@ -146,35 +142,34 @@ export const homepageContent = {
     body:
       "Creating hydrogen-rich water should feel effortless. Fill your bottle with drinking water, press once, and let Laikfvea prepare fresh hydrogen-rich water while you get on with your day.",
     steps: [
-      ["01", "Fill", "Add clean drinking water."],
-      ["02", "Press", "Start the cycle with one button."],
-      ["03", "Generate", "Hydrogen bubbles form inside the bottle."],
-      ["04", "Enjoy", "Drink fresh hydrogen-rich water after the cycle completes."]
-    ]
-  },
-  engineering: {
-    heading: "Precision Inside Every Sip.",
-    body:
-      "Every Laikfvea bottle is built around carefully selected materials and hydrogen generation technology designed for consistent daily performance.",
-    cards: [
-      "SPE / PEM Electrolysis",
-      "Titanium Electrodes",
-      "Platinum Coating",
-      "Borosilicate Glass",
-      "USB-C Charging",
-      "Up to 9000 PPB"
+      ["01", "Prepare", "Fill the bottle with clean drinking water."],
+      ["02", "Start", "Press the button on GO, or select the 3- or 18-minute mode on PRO."],
+      ["03", "Generate", "The SPE/PEM electrolysis system produces hydrogen-rich water in just minutes."],
+      ["04", "Enjoy", "Release the pressure, open the lid and drink immediately after the cycle for the freshest hydrogen-rich water."]
     ]
   },
   app: {
     label: "LAIKFVEA APP",
     heading: "Your Water. Smarter.",
     body:
-      "Connect your Laikfvea bottle to the mobile app to track your hydration, monitor bottle activity and manage your daily wellness routine from your phone.",
+      "Connect your Laikfvea PRO water bottle to the mobile app to control your device, monitor each cycle and set personalized reminders for when it is time to drink water.",
     features: [
-      "Track your hydration routine",
-      "View bottle activity",
-      "Manage your Laikfvea devices",
-      "Access product guidance and support"
+      {
+        title: "Control your PRO remotely",
+        body: "Start and manage hydrogen generation from your phone."
+      },
+      {
+        title: "Select cycle modes",
+        body: "Choose the hydrogen generation mode and adjust the cycle time."
+      },
+      {
+        title: "Monitor device status",
+        body: "View hydrogen concentration, ORP and battery level."
+      },
+      {
+        title: "Set drinking reminders",
+        body: "Create personalized reminders to support your daily hydration routine."
+      }
     ],
     iosCta: "App Store",
     androidCta: "Android"

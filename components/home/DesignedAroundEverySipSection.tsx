@@ -30,7 +30,7 @@ export function DesignedAroundEverySipSection() {
       height: 1254,
       className: "mx-auto block w-[128%] max-w-none"
     },
-    "Hydrogen Inhalation": {
+    "Hydrogen Inhalation with PRO": {
       src: "/technology/inhalation-tubes.png",
       alt: "Transparent inhalation tubes for the Laikfvea PRO hydrogen inhalation function",
       width: 1672,

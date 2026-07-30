@@ -35,7 +35,8 @@ export const products = {
       "Bluetooth app control",
       "Hydrogen inhalation",
       "Mineralization option",
-      "USB-C charging"
+      "USB-C charging",
+      "Tritan™ plastic body"
     ]
   }
 };

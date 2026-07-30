@@ -9,6 +9,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 type BottleFeature = (typeof homepageContent.bottleExplorer.details)[number];
 
+function getFeatureHeading(feature: BottleFeature) {
+  return "heading" in feature ? feature.heading : feature.title;
+}
+
 const highlightMap: Record<BottleFeature["highlightTarget"], { left: number; top: number; width: number; height: number }> = {
   lid: { left: 47, top: 17, width: 72, height: 44 },
   body: { left: 47, top: 45, width: 112, height: 168 },
@@ -29,7 +33,7 @@ function FeatureCard({ feature }: { feature: BottleFeature }) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.24, ease: "easeOut" }}
         >
-          <h3 className="mt-6 text-[1.45rem] font-semibold leading-tight text-ink sm:text-[1.65rem]">{feature.title}</h3>
+          <h3 className="mt-6 text-[1.45rem] font-semibold leading-tight text-ink sm:text-[1.65rem]">{getFeatureHeading(feature)}</h3>
           <p className="mt-5 text-sm leading-[1.85] text-muted sm:text-[0.95rem]">{feature.body}</p>
         </motion.div>
       </AnimatePresence>
@@ -83,7 +87,7 @@ function MobileFeatureAccordion({
             >
               <div className="overflow-hidden">
                 <div className="mt-3 rounded-[18px] border border-ink/[0.07] bg-white/78 p-6">
-                  <h3 className="text-lg font-semibold leading-tight text-ink">{item.title}</h3>
+                  <h3 className="text-lg font-semibold leading-tight text-ink">{getFeatureHeading(item)}</h3>
                   <p className="mt-3 text-sm leading-[1.75] text-muted">{item.body}</p>
                 </div>
               </div>
