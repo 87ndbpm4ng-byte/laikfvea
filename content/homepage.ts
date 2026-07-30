@@ -152,23 +152,23 @@ export const homepageContent = {
     label: "LAIKFVEA APP",
     heading: "Your Water. Smarter.",
     body:
-      "Connect your Laikfvea PRO water bottle to the mobile app to control your device, monitor each cycle and set personalized reminders for when it is time to drink water.",
+      "Connect your Laikfvea PRO bottle to the mobile app for convenient control, live device information and personalised hydration reminders.",
     features: [
       {
-        title: "Control your PRO remotely",
-        body: "Start and manage hydrogen generation from your phone."
+        title: "Control remotely",
+        body: "Start or stop hydrogen generation directly from your phone."
       },
       {
-        title: "Select cycle modes",
-        body: "Choose the hydrogen generation mode and adjust the cycle time."
+        title: "Choose a cycle",
+        body: "Select the appropriate generation mode for every use."
       },
       {
-        title: "Monitor device status",
-        body: "View hydrogen concentration, ORP and battery level."
+        title: "Live device status",
+        body: "Check hydrogen concentration, ORP and battery level at a glance."
       },
       {
-        title: "Set drinking reminders",
-        body: "Create personalized reminders to support your daily hydration routine."
+        title: "Smart reminders",
+        body: "Create personalised reminders to support your daily hydration routine."
       }
     ],
     iosCta: "App Store",
