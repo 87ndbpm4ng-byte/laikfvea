@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { SITE_CONFIG } from "@/config/site";
 import { homepageContent } from "@/content/homepage";
 import { MotionSection } from "@/components/ui/MotionSection";
@@ -39,59 +38,38 @@ function StoreButton({
   );
 }
 
-function AppVisual() {
-  return (
-    <div className="flex items-center justify-center">
-      <Image
-        src="/app/smart-app-control.png"
-        alt="Smart app control features and download options for the Laikfvea hydrogen generator"
-        width={2000}
-        height={2000}
-        sizes="(min-width: 1280px) 620px, (min-width: 1024px) 52vw, 100vw"
-        className="h-auto w-full max-w-[680px]"
-      />
-    </div>
-  );
-}
-
 export function AppSection() {
   const content = homepageContent.app;
 
   return (
     <MotionSection id="app" className="scroll-mt-28 px-6 py-24 sm:px-8 lg:px-10 lg:py-32">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <SectionHeading eyebrow={content.label} title={content.heading}>
-              <p>{content.body}</p>
-            </SectionHeading>
+      <div className="mx-auto max-w-[1100px]">
+        <SectionHeading eyebrow={content.label} title={content.heading}>
+          <p>{content.body}</p>
+        </SectionHeading>
 
-            <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:max-w-2xl">
-              {content.features.map((feature) => (
-                <li key={feature.title} className="rounded-brand border border-ink/8 bg-white px-5 py-4 text-sm text-ink shadow-[0_12px_32px_rgba(28,28,28,0.04)]">
-                  <h3 className="font-semibold">{feature.title}</h3>
-                  <p className="mt-2 leading-6 text-muted">{feature.body}</p>
-                </li>
-              ))}
-            </ul>
+        <ul className="mt-10 grid gap-5 md:grid-cols-2">
+          {content.features.map((feature) => (
+            <li key={feature.title} className="flex h-full flex-col rounded-brand border border-ink/8 bg-white px-6 py-5 text-sm text-ink shadow-[0_12px_32px_rgba(28,28,28,0.04)]">
+              <h3 className="font-semibold">{feature.title}</h3>
+              <p className="mt-2 leading-6 text-muted">{feature.body}</p>
+            </li>
+          ))}
+        </ul>
 
-            <div className="mt-10 grid gap-3 sm:grid-cols-2 sm:items-stretch lg:max-w-xl">
-              <StoreButton
-                href={SITE_CONFIG.app.ios}
-                label={content.iosCta}
-                eyebrow="Download on"
-                ariaLabel="Download the Laikfvea app on the App Store"
-              />
-              <StoreButton
-                href={SITE_CONFIG.app.android}
-                label={content.androidCta}
-                eyebrow="Get it for"
-                ariaLabel="Download the Laikfvea app for Android"
-              />
-            </div>
-          </div>
-
-          <AppVisual />
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 sm:items-stretch md:max-w-xl">
+          <StoreButton
+            href={SITE_CONFIG.app.ios}
+            label={content.iosCta}
+            eyebrow="Download on"
+            ariaLabel="Download the Laikfvea app on the App Store"
+          />
+          <StoreButton
+            href={SITE_CONFIG.app.android}
+            label={content.androidCta}
+            eyebrow="Get it for"
+            ariaLabel="Download the Laikfvea app for Android"
+          />
         </div>
       </div>
     </MotionSection>
